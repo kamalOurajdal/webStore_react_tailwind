@@ -4,27 +4,26 @@ function Footer() {
   return (
     <footer className="bg-[#0f3060] w-full pt-20 pb-4 px-20 mt-20 ">
       <div className="relative w-full  flex justify-center">
-        <div className=" absolute -top-32 shadow-xl bg-[#c1cfda]  w-2/3 flex justify-between items-center px-8 rounded-md py-6">
+        <div className=" absolute -top-32 shadow-[rgba(0,_0,_0,_0.3)_4px_2px_10px] bg-white   w-2/3 flex justify-between items-center px-8 rounded-md py-6">
           <h1 className="font-bold text-2xl"> Subscribe to our news</h1>
           <div className="flex justify-between items-center w-2/3">
             <input
               type="email"
               placeholder="Enter your email"
-              className=" h-10 flex-grow rounded-full pl-5 focus:outline-none ml-4"
+              className=" h-10 flex-grow rounded-full bg-gray-100 pl-5 focus:outline-none ml-4"
             />
-            <button className="bg-[#e94560] rounded-xl p-3 ml-6 font-medium">Subscribe</button>
+            <button className="bg-red-500 rounded-full px-4 py-2 ml-6 font-medium text-white">Subscribe</button>
           </div>
         </div>
       </div>
 
       <div className="flex justify-between items-start text-gray-400">
-        <div className="">
+        <div className="w-1/4">
           <h1 className="font-bold text-3xl text-[#e94560]">Kan9ala</h1>
-          <p className="mt-8">
-            Where Style Meets Comfort. Discover fashion-forward clothing <br />{" "}
+          <p className="mt-8 text-justify">
+            Where Style Meets Comfort. Discover fashion-forward clothing 
             and accessories that prioritize quality, affordability, and
-            sustainability. <br />
-            Elevate your wardrobe with Kan9ala today.
+            sustainability.  Elevate your wardrobe with Kan9ala today.
           </p>
           <div className=" flex justify-between mt-6">
             <button className="bg-[#c1cfda] p-3 rounded text-black font-medium bg-opacity-70">

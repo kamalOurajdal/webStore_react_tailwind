@@ -14,7 +14,6 @@ function App() {
         <Route path="/" exact>
           <Route index element={<Home />} />
         </Route>
-        
       </Routes>
       <Footer/>
     </div>

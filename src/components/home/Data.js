@@ -3,7 +3,7 @@ const Data = {
       {
         id: 1,
         discount: 50,
-        cover: require("../../media/slide/slide_1.png"),
+        cover: require("../../media/slide/slide_3.png"),
         name: "Watch",
         price: 100,
       },
@@ -31,7 +31,7 @@ const Data = {
       {
         id: 5,
         discount: 50,
-        cover: require("../../media/slide/slide_1.png"),
+        cover: require("../../media/slide/slide_3.png"),
         name: "Watch",
         price: 100,
       },

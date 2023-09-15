@@ -6,7 +6,7 @@ function SuperDeals() {
   const { productItems } = Data;
   return (
     <>
-      <section className="bg-[#f6f9fc]  py-20 flex justify-center">
+      <section className="  py-10 flex justify-center">
         <div className="w-full m-auto">
           <div className="flex justify-between mx-4">
             <div className=" flex items-center">

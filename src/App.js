@@ -5,6 +5,7 @@ import Home from "./pages/Home";
 import { Route, Routes, BrowserRouter, Outlet } from "react-router-dom";
 import Footer from "./components/Footer";
 import Card from "./pages/Cart";
+import Help from "./pages/Help";
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
         <Route path="/" exact>
           <Route index element={<Home />} />
           <Route path="card" element={<Card />} />
+          <Route path="help" element={<Help />} />
         </Route>
       </Routes>
       <Footer/>

@@ -40,11 +40,11 @@ const SuperCard = ({ productItems }) => {
 
   return (
     <>
-      <Slider {...settings}>
+      <Slider {...settings} className="">
         {productItems.map((productItems) => {
           return (
             <div className=' w-full group'>
-              <div className=' bg-[#fff] relative shadow-md rounded-md m-4 flex flex-col justify-between '>
+              <div className=' bg-[#fff] relative shadow-md rounded-md m-4  flex flex-col justify-between '>
                 <div className='img  h-48 my-8 flex flex-col justify-center items-center'>
                   <span className='  absolute top-0 left-0 bg-[#e94560] py-1 px-3 font-[poppins] rounded-full text-white m-2 '>{productItems.discount}% Off</span>
                   <img src={productItems.cover} alt='' className="w-32"/>

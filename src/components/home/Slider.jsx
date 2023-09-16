@@ -15,6 +15,7 @@ function SliderCardData() {
     autoplay: true,
     adaptiveHeight: true,
     arrows: false,
+    pauseOnHover: false,
   };
   
   return (

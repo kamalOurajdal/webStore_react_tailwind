@@ -1,44 +1,73 @@
-import { faMobileAlt, faPrint } from '@fortawesome/free-solid-svg-icons'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import React from 'react'
+import { faMobileAlt, faPrint } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import React from "react";
 
 function Categories() {
   // categories variable
   const categories = [
     {
       id: 1,
-      name: 'Electronics',
-      icon: 'fas fa-mobile-alt',
+      name: "Women's Fashion",
+      icon: "fas fa-female",
     },
     {
       id: 2,
-      name: 'Jewelery',
-      icon: 'fas fa-ring',
+      name: "Men's Fashion",
+      icon: "fas fa-male",
     },
     {
       id: 3,
-      name: "clothes",
-      icon: 'fas fa-tshirt',
+      name: "Phones & Telecommunications",
+      icon: "fa-solid fa-mobile-button",
     },
     {
       id: 4,
-      name: 'Beauty',
-      icon: 'fas fa-magic',
+      name: "Home, Pet & Appliances",
+      icon: "fa-solid fa-couch",
     },
     {
       id: 5,
-      name: 'Shoes',
-      icon: 'fas fa-shoe-prints',
+      name: "Consumer Electronics",
+      icon: "fa-solid fa-lightbulb",
     },
-  ]
+    {
+      id: 6,
+      name: "Jewelry & Watches",
+      icon: "fa-solid fa-gem",
+    },
+    {
+      id: 7,
+      name: "Bags & Shoes",
+      icon: "fa-solid fa-bag-shopping",
+    },
+    {
+      id: 8,
+      name: "Toys , Kids & Babies",
+      icon: "fa-solid fa-baby-carriage",
+    },
+    {
+      id: 9,
+      name: "Beauty, Health & Hair",
+      icon: "fa-solid fa-wand-magic-sparkles",
+    },
+    {
+      id: 10,
+      name: "Sports Accessories",
+      icon: "fa-solid fa-volleyball",
+    },
+  ];
   return (
-    <section className='bg-white w-1/5 h-[65vh] shadow-md shadow-gray-400 mr-2'>
-      
-        {categories.map((category, index) => 
-         <button key={index} className='text-left pl-6 w-full my- py-2 hover:bg-rose-100 transform duration-300 ease-in'><FontAwesomeIcon icon={faMobileAlt}/> {category.name} </button>
-        )}
+    <section className="bg-white w-fit h-[65vh] shadow-md shadow-gray-400 mr-2 flex flex-col justify-between py-5 ">
+      {categories.map((category, index) => (
+        <button
+          key={index}
+          className="text-left text-sm pl-4 w-full my- py-2 hover:bg-rose-100 transform duration-300 ease-in px-1"
+        >
+          <i className={`${category.icon} mr-2 text-gray-400` } ></i> {category.name}
+        </button>
+      ))}
     </section>
-  )
+  );
 }
 
-export default Categories
+export default Categories;

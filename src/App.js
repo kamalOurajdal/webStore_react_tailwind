@@ -4,6 +4,7 @@ import Header from "./components/Header";
 import Home from "./pages/Home";
 import { Route, Routes, BrowserRouter, Outlet } from "react-router-dom";
 import Footer from "./components/Footer";
+import Card from "./pages/Card";
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
       <Routes>
         <Route path="/" exact>
           <Route index element={<Home />} />
+          <Route path="card" element={<Card />} />
         </Route>
       </Routes>
       <Footer/>

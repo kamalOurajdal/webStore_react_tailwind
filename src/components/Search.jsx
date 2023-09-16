@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef } from "react";
+import { Link } from 'react-router-dom';
 
 function Search() {
   window.addEventListener("scroll", function () {
@@ -17,7 +18,7 @@ function Search() {
       <h1 className="text-3xl font-bold">
         Kan<span className="text-[#e94560]">9ala</span>
       </h1>
-      <div className="border-2 flex items-center rounded-full pl-4 w-1/2">
+      <div className="border-2 flex items-center rounded-full pl-4 w-1/2 ">
         <i className="fa-solid fa-magnifying-glass text-gray-500"></i>
         <input
           type="text"
@@ -28,15 +29,26 @@ function Search() {
         />
       </div>
 
-      <div className="w-28 flex items-center justify-between px-2  text-gray-500">
-        <div className="relative ">
-          <i className="fa-solid fa-bag-shopping text-2xl"></i>
-          <span className="absolute -right-2 -top-0 text-xs w-4 text-center bg-red-500 rounded-full text-white">
-            0
-          </span>
-        </div>
+      <div className="  flex  items-center justify-between px-2  text-gray-500">
+        <Link to={"/card"}>
+          <div className="relative cursor-pointer">
+            <i className="fa-solid fa-bag-shopping text-2xl "></i>
+            <span className="absolute -right-2 -top-0 text-xs w-4 text-center  bg-red-500 rounded-full text-white font-semibold">
+              0
+            </span>
+          </div>
+        </Link>
 
-        <i className="fa-solid fa-user text-2xl"></i>
+        {/* <i className="fa-solid fa-user text-2xl"></i> */}
+        <div className="flex justify-between space-x-6 ml-12">
+          {/* buttons for signing and register */}
+          <button className="text-sm font-semibold text-black hover:text-gray-700 border  px-3 py-[7px] rounded ">
+            Sign in
+          </button>
+          <button className="text-sm font-semibold text-white bg-orange-400 px-3 py-[7px] rounded">
+            Register
+          </button>
+        </div>
       </div>
     </section>
   );

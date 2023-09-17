@@ -18,7 +18,7 @@ function SummaryCard() {
           <p className="text-[#e94560] text-lg">$200</p>
         </div>
       </div>
-      <button className="bg-[#FA374E] w-full rounded-md mt-4 py-1 text-white font-medium">Checkout</button>
+      <button className="bg-[#FF472E] w-full rounded-md mt-4 py-1 text-white font-medium">Checkout</button>
     </div>
   );
 }

@@ -11,7 +11,7 @@ function MoreToLoveCard({ product }) {
     <>
       {productItems.map((productItems) => {
         return (
-            <div className="group bg-[#fff] relative shadow-md rounded-md m-2 flex-grow flex flex-col justify-between w-60 h-72 max-w-[16rem] ">
+            <div className="group bg-[#fff] relative shadow-md rounded-md m-2 flex-grow flex flex-col justify-between  h-72  ">
               <div className="h-48 my-8 flex flex-col justify-center items-center">
                 <span className="  absolute top-0 left-0 bg-[#e94560] py-1 px-3 font-[poppins] rounded-full text-white m-2 ">
                   {productItems.discount}% Off

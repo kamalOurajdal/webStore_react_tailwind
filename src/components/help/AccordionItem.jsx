@@ -5,18 +5,19 @@ function AccordionItem({ open, toggle, title, desc }) {
   return (
     <div className="">
       <div
-        className=" p-4 rounded-md bg-[#f6f9fc] cursor-pointer flex  items-center shadow-md"
+        className={`${open ? "bg-[#FFECEA] text-[#FA462D]":""} p-4 rounded-md bg-white hover:bg-[#FFECEA] hover:text-[#FA462D] 
+        cursor-pointer flex  items-center shadow-md transform duration-500 ease-in-out `}
         onClick={toggle}
       >
         <i
-          className={`fa-solid fa-chevron-down transform duration-500 ease-in-out ${
+          className={`fa-solid fa-chevron-down  duration-200 ease-in-out ${
             open ? "rotate-180" : ""
           }`}
         ></i>
         <h1 className="ml-2">{title}</h1>
       </div>
-      <Collapse isOpened={open} style={""}>
-        <div className="bg-[#f6f9fc] px-20 pb-10">
+      <Collapse isOpened={open} >
+        <div className={`px-20 py-5 leading-7 bg-white `}>
           <p>{desc}</p>
         </div>
       </Collapse>

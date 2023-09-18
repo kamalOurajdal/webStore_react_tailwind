@@ -18,30 +18,29 @@ function Search() {
       <h1 className="text-3xl font-bold">
         Kan<span className="text-[#e94560]">9ala</span>
       </h1>
-      <div className="border-2 flex items-center rounded-full pl-4 w-1/2 ">
+      <div className=" flex items-center bg-[#F5F5F5] rounded-full pl-4 w-1/2 ">
         <i className="fa-solid fa-magnifying-glass text-gray-500"></i>
         <input
           type="text"
           name=""
           id=""
           placeholder="Type to search products..."
-          className="  h-11 rounded-full px-4 focus:outline-none placeholder:text-sm w-full"
+          className="  h-11 bg-transparent rounded-full px-4 focus:outline-none placeholder:text-sm w-full"
         />
       </div>
 
-      <div className="  flex  items-center justify-between px-2  text-gray-500">
+      <div className="  flex  items-center justify-between space-x-8 text-gray-500">
         <Link to={"/card"}>
           <div className="relative cursor-pointer">
-            <i className="fa-solid fa-bag-shopping text-2xl "></i>
-            <span className="absolute -right-2 -top-0 text-xs w-4 text-center  bg-red-500 rounded-full text-white font-semibold">
+          <i class="fa-solid fa-cart-shopping text-2xl"></i>
+            <span className="absolute -right-2 -top-1 text-xs w-4 text-center  bg-red-500 rounded-full text-white font-semibold">
               0
             </span>
           </div>
         </Link>
+        <i class="fa-regular fa-heart text-2xl cursor-pointer"></i>
 
-        {/* <i className="fa-solid fa-user text-2xl"></i> */}
-        <div className="flex justify-between space-x-6 ml-12">
-          {/* buttons for signing and register */}
+        <div className="flex justify-between space-x-6 ">
           <button className="text-sm font-semibold text-black hover:text-gray-700 border  px-3 py-[7px] rounded ">
             Sign in
           </button>

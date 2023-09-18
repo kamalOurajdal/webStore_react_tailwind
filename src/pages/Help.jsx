@@ -5,10 +5,13 @@ import ContactSupport from '../components/help/ContactSupport'
 
 function Help() {
   return (
-    <section  className="w-full  pb-32  px-20  pt-10 bg-gradient-to-b from-orange-100 to-[#f6f9fc]">
+    <section  className="w-full  pb-32  ">
         <SearchHelp/>
-        <TopicsHelp/>
+        <div className='px-20  pt-10 '>
+            <TopicsHelp/>
         <ContactSupport/>
+        </div>
+        
     </section>
   )
 }

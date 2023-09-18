@@ -12,7 +12,7 @@ function MoreToLove() {
         </div>
       </div>
       <div className=" ">
-        <div className="flex flex-wrap items-center  p-2 ">
+        <div className="grid grid-cols-5 gap-4 ">
           <MoreToLoveCard />
         </div>
       </div>

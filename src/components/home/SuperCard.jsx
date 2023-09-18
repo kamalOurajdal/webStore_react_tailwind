@@ -68,8 +68,8 @@ const SuperCard = ({ productItems }) => {
                     {/* step : 3  
                      if hami le button ma click garryo bahne 
                     */}
-                    <button className="  text-[#e94560] text-lg border  rounded-md px-2">
-                      <i className='fa fa-plus'></i>
+                    <button className="  text-[#e94560] text-2xl   rounded-md px-2">
+                    <i class="fa-solid fa-cart-plus"></i>
                     </button>
                   </div>
                 </div>

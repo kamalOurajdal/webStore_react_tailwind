@@ -6,6 +6,7 @@ import { Route, Routes, BrowserRouter, Outlet } from "react-router-dom";
 import Footer from "./components/Footer";
 import Card from "./pages/Cart";
 import Help from "./pages/Help";
+import About from "./pages/About";
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
           <Route index element={<Home />} />
           <Route path="card" element={<Card />} />
           <Route path="help" element={<Help />} />
+          <Route path="about" element={<About />} />
         </Route>
       </Routes>
       <Footer/>

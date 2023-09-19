@@ -2,6 +2,8 @@ import React from "react";
 import AboutCard from "../components/about/AboutCard";
 import imag from "../media/about_us.jpg";
 import TeamCard from "../components/about/TeamCard";
+import img_followUS from "../media/team/follow_us.jpg";
+import TrustInfo from "../components/home/TrustInfo";
 
 function About() {
   const data = [
@@ -55,13 +57,34 @@ function About() {
       <div className="w-[90%] m-auto mt-10">
         <h1 className="text-center font-bold text-4xl mb-4">Our Team</h1>
         <p className="w-1/2  m-auto">
-          Our team is a diverse group of
-          professionals, each bringing their unique expertise to the table to provide you with exceptional products and an
-          unforgettable shopping experience.
+          Our team is a diverse group of professionals, each bringing their
+          unique expertise to the table to provide you with exceptional products
+          and an unforgettable shopping experience.
         </p>
         <br />
-        <TeamCard/>
+        <TeamCard />
       </div>
+      <div
+        className="w-full h-96 mt-16 relative flex items-center justify-center bg-cover bg-center bg-fixed"
+        style={{ backgroundImage: `url(${img_followUS})` }}
+      >
+        <div className="w-72 bg-[#f6f9fc] m-auto h-full flex flex-col items-center justify-center">
+          <h1 className="text-3xl font-bold text-center text-gray-600">
+            Follow Us
+          </h1>
+          <div className="flex justify-center items-center space-x-8 text-2xl mt-8">
+            <i className="fa-brands fa-facebook text-[#1877F2] "></i>
+            <i className="fa-brands fa-twitter text-[#1DA1F2] "></i>
+            <i className="fa-brands fa-pinterest text-[#BD081C] "></i>
+            <i className="fa-brands fa-linkedin text-[#0A66C2] "></i>
+          </div>
+          {/* <h1 className="text-5xl font-bold text-white absolute">About Us</h1> */}
+        </div>
+      </div>
+    <div className="w-[90%] m-auto mt-20">
+        <TrustInfo/>
+      </div>
+      
     </div>
   );
 }

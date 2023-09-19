@@ -10,6 +10,7 @@ import About from "./pages/About";
 import Login from "./pages/Profile";
 import Profile from "./pages/Profile";
 import Register from "./components/profile/Register";
+import Contact from "./pages/Contact";
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
           <Route path="card" element={<Card />} />
           <Route path="help" element={<Help />} />
           <Route path="about" element={<About />} />
+          <Route path="contact" element={<Contact/>}/>
           <Route path="login" element={<Login />} />
           <Route path="register" element={<Register />} />
           <Route path="profile" element={<Profile />} />

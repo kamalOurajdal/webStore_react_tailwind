@@ -1,9 +1,9 @@
 import React from "react";
 import AboutCard from "../components/about/AboutCard";
-import imag from "../media/about_us.jpg"
+import imag from "../media/about_us.jpg";
+import TeamCard from "../components/about/TeamCard";
 
 function About() {
-
   const data = [
     {
       title: "About Us",
@@ -33,24 +33,34 @@ function About() {
        we are dedicated to sustainable practices, promoting eco-friendly
         products and packaging to create a better tomorrow.`,
     },
-
-
-  ]
+  ];
 
   return (
-    <div className="bg-[#f6f9fc]">
-      <div className="w-[90%]  m-auto pb-40 py-10 px-2 ">
-        <h1 className="text-3xl font-bold mb-8">This is Kan<span className="text-[#e94560]">9ala</span> </h1>
+    <div className="bg-[#f6f9fc] pb-40">
+      <div className="w-[90%]  m-auto  py-10 px-2 ">
+        <h1 className="text-3xl font-bold mb-8">
+          This is Kan<span className="text-[#e94560]">9ala</span>{" "}
+        </h1>
         <p className="leading-8 ">
           Our vision is to create a better everyday life for the many people.
-          Here you can discover what this means and find out<br/> who we are, what we
-          do and what we’re working towards.
+          Here you can discover what this means and find out
+          <br /> who we are, what we do and what we’re working towards.
         </p>
         <div className="grid grid-cols-3 gap-6 mt-14">
           {data.map((item, index) => (
             <AboutCard key={index} data={item} />
           ))}
         </div>
+      </div>
+      <div className="w-[90%] m-auto mt-10">
+        <h1 className="text-center font-bold text-4xl mb-4">Our Team</h1>
+        <p className="w-1/2  m-auto">
+          Our team is a diverse group of
+          professionals, each bringing their unique expertise to the table to provide you with exceptional products and an
+          unforgettable shopping experience.
+        </p>
+        <br />
+        <TeamCard/>
       </div>
     </div>
   );

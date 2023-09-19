@@ -42,7 +42,7 @@ function Search() {
             </div>
           </Link>
           <Link to={"/wish_list"}><i class="fa-regular fa-heart text-xl cursor-pointer"></i></Link>
-          <Link to={"profile/login"}><i class="fa-regular fa-user text-xl cursor-pointer"></i></Link>
+          <Link to={"login"}><i class="fa-regular fa-user text-xl cursor-pointer"></i></Link>
           
         </div>
       </div>

@@ -7,11 +7,13 @@ import Footer from "./components/Footer";
 import Card from "./pages/Cart";
 import Help from "./pages/Help";
 import About from "./pages/About";
+import Login from "./pages/Profile";
+import Profile from "./pages/Profile";
+import Register from "./components/profile/Register";
 
 function App() {
   return (
     <div className=" w-screen font-[poppins]">
-      
       <Header />
       <Routes>
         <Route path="/" exact>
@@ -19,9 +21,13 @@ function App() {
           <Route path="card" element={<Card />} />
           <Route path="help" element={<Help />} />
           <Route path="about" element={<About />} />
+          <Route path="login" element={<Login />} />
+          <Route path="register" element={<Register />} />
+          <Route path="profile" element={<Profile />} />
+
         </Route>
       </Routes>
-      <Footer/>
+      <Footer />
     </div>
   );
 }

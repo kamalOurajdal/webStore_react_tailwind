@@ -35,14 +35,14 @@ function Search() {
         <div className="  flex  items-center justify-between space-x-8 text-gray-500">
           <Link to={"/card"}>
             <div className="relative cursor-pointer">
-              <i class="fa-solid fa-cart-shopping text-xl"></i>
+              <i className="fa-solid fa-cart-shopping text-xl"></i>
               <span className="absolute -right-2 -top-1 text-[9px] w-4 h-4 flex items-center justify-center  bg-[#e94560] rounded-full text-white font-semibold">
                 2
               </span>
             </div>
           </Link>
-          <Link to={"/wish_list"}><i class="fa-regular fa-heart text-xl cursor-pointer"></i></Link>
-          <Link to={"profile"}><i class="fa-regular fa-user text-xl cursor-pointer"></i></Link>
+          <Link to={"/favourites"}><i className="fa-regular fa-heart text-xl cursor-pointer"></i></Link>
+          <Link to={"profile"}><i className="fa-regular fa-user text-xl cursor-pointer"></i></Link>
           
         </div>
       </div>

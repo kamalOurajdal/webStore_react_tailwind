@@ -15,7 +15,7 @@ function SuperDeals() {
                 Super <span className="text-red-500">Delas</span>{" "}
               </h1>
             </div>
-            <button>View all <i class="fa-solid fa-caret-right"></i></button>
+            <button>View all <i className="fa-solid fa-caret-right"></i></button>
           </div>
 
           <SuperCard productItems={productItems} />

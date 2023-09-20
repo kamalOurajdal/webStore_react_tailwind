@@ -3,22 +3,22 @@ import React from 'react'
 function TrustInfo() {
     const data = [
         {
-          cover: <i class='fa-solid fa-truck-fast'></i>,
+          cover: <i className='fa-solid fa-truck-fast'></i>,
           title: "Worldwide Delivery",
           decs: "Experience global convenience with our lightning-fast worldwide delivery service.",
         },
         {
-          cover: <i class='fa-solid fa-id-card'></i>,
+          cover: <i className='fa-solid fa-id-card'></i>,
           title: "Safe Payment",
           decs: "Rest assured, your transactions are protected with our secure payment options for worry-free shopping.",
         },
         {
-          cover: <i class='fa-solid fa-shield'></i>,
+          cover: <i className='fa-solid fa-shield'></i>,
           title: "Shop With Confidence ",
           decs: "Shop with confidence knowing that we prioritize your satisfaction and offer a 100% satisfaction guarantee.",
         },
         {
-          cover: <i class='fa-solid fa-headset'></i>,
+          cover: <i className='fa-solid fa-headset'></i>,
           title: "24/7 Support ",
           decs: "Enjoy peace of mind with our dedicated 24/7 support team ready to assist you around the clock",
         },

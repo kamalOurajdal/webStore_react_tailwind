@@ -66,7 +66,7 @@ function TopicsHelp() {
         <div className="flex justify-between mb-4">
           <h1 className="font-bold text-lg">Topics</h1>
           <p className="text-gray-400">
-            More topics <i class="fa-solid fa-caret-right"></i>
+            More topics <i className="fa-solid fa-caret-right"></i>
           </p>
         </div>
         <div className="  grid grid-cols-2 gap-4">

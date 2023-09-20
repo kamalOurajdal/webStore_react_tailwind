@@ -7,7 +7,7 @@ function Login() {
         e.preventDefault();
     }
   return (
-    <section className="h-[78vh] flex items-start justify-around pb-20 
+    <section className="h-[78vh] flex items-start justify-around pb-20 pt-10
      bg-[#f6f9fc]">
       <div >
         <h1 className="text-3xl font-bold mb-10">

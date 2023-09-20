@@ -127,7 +127,7 @@ function Register() {
               >
                 Password
               </label>
-              <i class="fa-regular fa-eye cursor-pointer text-gray-500"></i>
+              <i className="fa-regular fa-eye cursor-pointer text-gray-500"></i>
             </div>
             {/* checkbox for news letter and pravcy */}
             <div className="mt-4 flex flex-col space-y-4 ">
@@ -142,7 +142,7 @@ function Register() {
                     id="news"
                     className="  outline-none  w-5 h-5 appearance-none border border-gray-500 rounded-sm checked:bg-[#FA462D] peer"
                   />
-                  <i class="fa-solid fa-check absolute -left-1 font-bold opacity-0 text-white peer-checked:opacity-100  "></i>
+                  <i className="fa-solid fa-check absolute -left-1 font-bold opacity-0 text-white peer-checked:opacity-100  "></i>
                   <p>I want to receive news and special offers</p>
                 </label>
               </div>
@@ -157,7 +157,7 @@ function Register() {
                     id="privcy"
                     className=" outline-none  w-5 h-5 appearance-none border border-gray-500 rounded-sm checked:bg-[#FA462D] peer "
                   />
-                  <i class="fa-solid fa-check absolute -left-1 font-bold opacity-0 text-white peer-checked:opacity-100 "></i>
+                  <i className="fa-solid fa-check absolute -left-1 font-bold opacity-0 text-white peer-checked:opacity-100 "></i>
                   <p>I have read and understood the privacy policy</p>
                 </label>
               </div>

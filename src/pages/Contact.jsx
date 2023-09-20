@@ -21,7 +21,7 @@ function Contact() {
           <div className="absolute text-gray-500 inset-x-0 -bottom-24 flex justify-center items-center">
             <div className="w-2/3 grid grid-cols-2 gap-4">
               <div className="bg-white p-4 shadow-md">
-                <i class="fa-solid fa-phone m-auto mb-2 text-2xl bg-[#f6f9fc] w-12 h-12 rounded-full flex items-center justify-center text-blue-500"></i>
+                <i className="fa-solid fa-phone m-auto mb-2 text-2xl bg-[#f6f9fc] w-12 h-12 rounded-full flex items-center justify-center text-blue-500"></i>
                 <p>
                   If you like to hear a voice at the other end, we're there for
                   you with everything you need. Call +212 506070809
@@ -29,7 +29,7 @@ function Contact() {
               </div>
 
               <div className="bg-white p-3 shadow-md rounded-md">
-                <i class="fa-brands fa-whatsapp m-auto mb-2 text-3xl bg-[#f6f9fc] w-12 h-12 rounded-full flex items-center justify-center text-[#25D366]"></i>
+                <i className="fa-brands fa-whatsapp m-auto mb-2 text-3xl bg-[#f6f9fc] w-12 h-12 rounded-full flex items-center justify-center text-[#25D366]"></i>
 
                 <p>
                   As we always strive to give you the best service, we're now

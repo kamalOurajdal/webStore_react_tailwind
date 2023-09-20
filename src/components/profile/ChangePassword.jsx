@@ -10,27 +10,36 @@ function ChangePassword() {
       </p>
       <ul className="mt-4 space-y-4">
         <li>
-          <label className="block text-sm ml-4">Current password</label>
+          <label htmlFor="current_password" className="block text-sm ml-4">Current password</label>
           <input
             type="text"
+            id="current_password"
             className="pl-4 w-full border border-gray-300 p-2 rounded-md focus:outline-none"
           />
         </li>
         <li>
-          <label className="block text-sm ml-4">New password</label>
+          <label htmlFor="new_password" className="block text-sm ml-4">New password</label>
           <input
             type="text"
+            id="new_password"
             className="pl-4 w-full border border-gray-300 p-2 rounded-md focus:outline-none"
           />
         </li>
         <li>
-          <label className="block text-sm ml-4">Confirm new password</label>
+          <label htmlFor="confirm_password" className="block text-sm ml-4">Confirm new password</label>
           <input
             type="text"
+            id="confirm_password"
             className="pl-4 w-full border border-gray-300 p-2 rounded-md focus:outline-none"
           />
         </li>
       </ul>
+      <button
+            className=" bg-[#FA462D] text-sm mt-4  text-white px-4 py-2 rounded-md"
+            
+          >
+            Save
+          </button>
     </div>
   );
 }

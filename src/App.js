@@ -7,10 +7,12 @@ import Footer from "./components/Footer";
 import Card from "./pages/Cart";
 import Help from "./pages/Help";
 import About from "./pages/About";
-import Login from "./pages/Profile";
 import Profile from "./pages/Profile";
-import Register from "./components/profile/Register";
+import Register from "./pages/Register";
 import Contact from "./pages/Contact";
+import Login from "./pages/Login";
+import Favourites from "./pages/Favourites";
+
 
 function App() {
   return (
@@ -26,6 +28,7 @@ function App() {
           <Route path="login" element={<Login />} />
           <Route path="register" element={<Register />} />
           <Route path="profile" element={<Profile />} />
+          <Route path="favourites" element={<Favourites />} />
 
         </Route>
       </Routes>

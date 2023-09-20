@@ -11,31 +11,31 @@ function Navbar() {
           to="/products/new"
           className="flex items-center justify-between px-4  hover:text-rose-500"
         >
-          New products <i class="fa-solid fa-caret-right"></i>
+          New products <i className="fa-solid fa-caret-right"></i>
         </Link>
         <Link
           to="/products/top-sellers"
           className="flex items-center justify-between px-4  hover:text-rose-500"
         >
-          Our top sellers <i class="fa-solid fa-caret-right"></i>
+          Our top sellers <i className="fa-solid fa-caret-right"></i>
         </Link>
         <Link
           to="/products/limited-edition"
           className="flex items-center justify-between px-4  hover:text-rose-500"
         >
-          Limited edition <i class="fa-solid fa-caret-right"></i>
+          Limited edition <i className="fa-solid fa-caret-right"></i>
         </Link>
         <Link
           to="/products/last-chance"
           className="flex items-center justify-between px-4  hover:text-rose-500"
         >
-          Last chance to buy <i class="fa-solid fa-caret-right"></i>
+          Last chance to buy <i className="fa-solid fa-caret-right"></i>
         </Link>
         <Link
           to="/products/trending"
           className="flex items-center justify-between px-4  hover:text-rose-500"
         >
-          Trending <i class="fa-solid fa-caret-right"></i>
+          Trending <i className="fa-solid fa-caret-right"></i>
         </Link>
       </div>
     </div>
@@ -49,25 +49,25 @@ function Navbar() {
           to="/deals/lowest"
           className="flex items-center justify-between px-4  hover:text-rose-500"
         >
-          The Lowest price <i class="fa-solid fa-caret-right"></i>
+          The Lowest price <i className="fa-solid fa-caret-right"></i>
         </Link>
         <Link
           to="/deaks/under?5"
           className="flex items-center justify-between px-4  hover:text-rose-500"
         >
-          Solutions under 5$ <i class="fa-solid fa-caret-right"></i>
+          Solutions under 5$ <i className="fa-solid fa-caret-right"></i>
         </Link>
         <Link
           to="/deaks/under?7.5"
           className="flex items-center justify-between px-4  hover:text-rose-500"
         >
-          Solutions under 7.5$ <i class="fa-solid fa-caret-right"></i>
+          Solutions under 7.5$ <i className="fa-solid fa-caret-right"></i>
         </Link>
         <Link
           to="/deaks/under?10"
           className="flex items-center justify-between px-4  hover:text-rose-500"
         >
-          Solutions under 10$ <i class="fa-solid fa-caret-right"></i>
+          Solutions under 10$ <i className="fa-solid fa-caret-right"></i>
         </Link>
       </div>
     </div>
@@ -83,7 +83,7 @@ function Navbar() {
           <p className="mx-4 group-hover:text-rose-500 cursor-pointer ">
             Products{" "}
             <i
-              class={`group-hover:rotate-180 fa-solid fa-caret-up ml-1 transform duration-300 ease-in-out`}
+              className={`group-hover:rotate-180 fa-solid fa-caret-up ml-1 transform duration-300 ease-in-out`}
             ></i>
           </p>
           {productDropdown}
@@ -92,7 +92,7 @@ function Navbar() {
           <p className="mx-4 group-hover:text-rose-500 cursor-pointer ">
             Deals{" "}
             <i
-              class={`group-hover:rotate-180 fa-solid fa-caret-up ml-1 transform duration-300 ease-in-out`}
+              className={`group-hover:rotate-180 fa-solid fa-caret-up ml-1 transform duration-300 ease-in-out`}
             ></i>
           </p>
           {dealDropdown}

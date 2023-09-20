@@ -3,10 +3,10 @@ import React from "react";
 function ContactSupport() {
   return (
     <div className=" m-auto flex flex-col items-center ">
-        <div class=" flex  items-center  w-1/2 mb-6">
-          <div class="flex-grow border-t  border-gray-300"></div>
+        <div className=" flex  items-center  w-1/2 mb-6">
+          <div className="flex-grow border-t  border-gray-300"></div>
           <h1 className="font-bold text-xl mx-4 text-gray-500">Need more help?</h1>
-          <div class="flex-grow border-t  border-gray-300"></div>
+          <div className="flex-grow border-t  border-gray-300"></div>
         </div>
       <div className="w-1/2 bg-[#f6f9fc] px-10 rounded-md">
         <form action="" className="w-full my-8 ">

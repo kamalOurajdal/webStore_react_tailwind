@@ -5,10 +5,10 @@ function MoreToLove() {
   return (
     <section className="w-full ">
       <div className="flex justify-center ">
-        <div class="relative flex py-5 items-center mt-6 w-1/2">
-          <div class="flex-grow border-t border-[1px] border-gray-300"></div>
+        <div className="relative flex py-5 items-center mt-6 w-1/2">
+          <div className="flex-grow border-t border-[1px] border-gray-300"></div>
           <h1 className="font-bold text-2xl mx-4">More to love</h1>
-          <div class="flex-grow border-t border-[1px]  border-gray-300"></div>
+          <div className="flex-grow border-t border-[1px]  border-gray-300"></div>
         </div>
       </div>
       <div className=" ">

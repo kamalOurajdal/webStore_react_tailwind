@@ -8,7 +8,7 @@ function Discounts() {
         <div className="w-full h-60">
           <div className="flex justify-between items-center">
             <div className="flex items-center ml-4">
-              <i class="fa-solid fa-gift mr-1 text-xl text-[#e94560]"></i>
+              <i className="fa-solid fa-gift mr-1 text-xl text-[#e94560]"></i>
               <h2 className="font-bold ">Big Discounts</h2>
             </div>
             <div className="flex items-center ">

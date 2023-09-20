@@ -28,11 +28,11 @@ function Footer() {
           </p>
           <div className=" flex justify-between mt-6">
             <button className="bg-[#c1cfda] p-3 rounded text-black font-medium bg-opacity-70">
-              <i class="fa-brands fa-google-play mr-2"></i>
+              <i className="fa-brands fa-google-play mr-2"></i>
               <span>Google Play</span>
             </button>
             <button className="bg-[#c1cfda] p-3 rounded text-black font-medium bg-opacity-70">
-              <i class="fa-brands fa-app-store-ios mr-2"></i>
+              <i className="fa-brands fa-app-store-ios mr-2"></i>
               <span>App Store</span>
             </button>
           </div>
@@ -66,23 +66,23 @@ function Footer() {
               <br /> Morocco, Zip 45302{" "}
             </li>
             <li>
-              <i class="fa-solid fa-envelope"></i> Kan9ala.help@gmail.com
+              <i className="fa-solid fa-envelope"></i> Kan9ala.help@gmail.com
             </li>
             <li>
-              <i class="fa-solid fa-phone"></i> +1 1123 456 780
+              <i className="fa-solid fa-phone"></i> +1 1123 456 780
             </li>
           </ul>
         </div>
       </div>
-      <div class="relative flex py-5 items-center mt-6">
-        <div class="flex-grow border-t border-gray-400"></div>
+      <div className="relative flex py-5 items-center mt-6">
+        <div className="flex-grow border-t border-gray-400"></div>
         <div className="flex items-center space-x-6 text-gray-400 px-4">
           <i className="fab fa-facebook-f text-2xl"></i>
           <i className="fab fa-twitter text-2xl"></i>
           <i className="fab fa-instagram text-2xl"></i>
           <i className="fab fa-youtube text-2xl"></i>
         </div>
-        <div class="flex-grow border-t border-gray-400"></div>
+        <div className="flex-grow border-t border-gray-400"></div>
       </div>
     </footer>
   );

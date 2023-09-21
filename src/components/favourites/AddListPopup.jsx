@@ -1,11 +1,10 @@
 import React from "react";
 
-function AddListPopup({ isOpen, togglePopup }) {
+function AddListPopup({ onClose}) {
   return (
     <>
-      {isOpen && (
         <div className="fixed inset-0 flex items-center justify-center z-50">
-          <div className="fixed inset-0 bg-gray-500 opacity-50 backdrop-blur-md"></div>
+          <div className="fixed inset-0 bg-black bg-opacity-50 "></div>
 
           <div className="bg-white z-50 w-1/3 rounded-lg px-4 pb-4">
             <div className=" rounded-lg ">
@@ -13,7 +12,7 @@ function AddListPopup({ isOpen, togglePopup }) {
                 <h1 className=" font-semibold">Add to list</h1>
                 <i
                   className="fa-solid text-gray-400 fa-xmark cursor-pointer text-2xl"
-                  onClick={togglePopup}
+                  onClick={onClose}
                 ></i>
               </div>
               <hr />
@@ -30,14 +29,13 @@ function AddListPopup({ isOpen, togglePopup }) {
               </div>
                 <button
                   className="bg-blue-500 text-white px-4 py-2 rounded-md"
-                  onClick={togglePopup}
+                  onClick={onClose}
                 >
                   save
                 </button>
             </div>
           </div>
         </div>
-      )}
     </>
   );
 }

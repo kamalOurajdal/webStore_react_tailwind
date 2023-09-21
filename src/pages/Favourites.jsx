@@ -2,40 +2,27 @@ import React, { useState } from "react";
 import Data from "../components/home/Data";
 import LikedItem from "../components/favourites/LikedItem";
 import AddListPopup from "../components/favourites/AddListPopup";
+import { lists } from "../components/favourites/Data";
 
 function Favourites() {
   const { productItems } = Data;
-  const [isOpen, setIsOpen] = useState(false);
+  const [showMoveToList, setShowMoveToList] = useState(false);
+  const [showAddListPopup, setShowAddListPopup] = useState(false);
 
-  const togglePopup = () => {
-    setIsOpen(!isOpen);
+  const openMoveToList = () => {
+    setShowMoveToList(true);
   };
-  const lists = [
-    {
-      name: "Home",
-      items: 6,
-    },
-    {
-      name: "Work",
-      items: 4,
-    },
-    {
-      name: "School",
-      items: 3,
-    },
-    {
-      name: "Vacation",
-      items: 2,
-    },
-    {
-      name: "Shopping",
-      items: 1,
-    },
-    {
-      name: "Grocery",
-      items: 2,
-    },
-  ];
+  const closeMoveToList = () => {
+    setShowMoveToList(false);
+  };
+
+  const openAddLisPopup = () => {
+    setShowAddListPopup(true);
+  };
+  const closeAddListPopup = () => {
+    setShowAddListPopup(false);
+  };
+
   return (
     <section className="bg-[#f6f9fc] pb-32 pt-12">
       <div className="w-[84%] m-auto">
@@ -47,7 +34,10 @@ function Favourites() {
             <div className="space-y-2 pt-4">
               {lists.map((list, index) => {
                 return (
-                  <div className="bg-white shadow-md flex justify-between items-center border p-2 rounded cursor-pointer hover:scale-105 duration-500 ease-in-out ">
+                  <div
+                    key={index}
+                    className="bg-white shadow-md flex justify-between items-center border p-2 rounded cursor-pointer hover:scale-105 duration-500 ease-in-out "
+                  >
                     <div className="">
                       <h1>{list.name}</h1>
                       <h6 className="text-xs text-gray-500">
@@ -59,12 +49,13 @@ function Favourites() {
                   </div>
                 );
               })}
-              {/* <button type="submit" onClick={handleAddList}> */}
-              <button className="text-center text-[#e94560] w-full  bg-white shadow-md  border p-2 rounded cursor-pointer hover:scale-105 duration-500 ease-in-out "
-              onClick={togglePopup}>
+              <button
+                className="text-center text-[#e94560] w-full  bg-white shadow-md  border p-2 rounded cursor-pointer hover:scale-105 duration-500 ease-in-out "
+                onClick={openAddLisPopup}
+              >
                 <i className="fa-solid fa-circle-plus mr-1"></i>Add list
               </button>
-                <AddListPopup isOpen={isOpen} togglePopup={togglePopup} />
+              {showAddListPopup && <AddListPopup onClose={closeAddListPopup} />}
             </div>
           </div>
           <div className="flex-grow">
@@ -93,7 +84,16 @@ function Favourites() {
             <div className="flex pt-4 h-screen overflow-auto">
               <div className="space-y-4 w-full">
                 {productItems.map((product, index) => {
-                  return <LikedItem key={index} product={product} />;
+                  return (
+                    <LikedItem
+                      key={index}
+                      product={product}
+                      openMoveToList={openMoveToList}
+                      closeMoveToList={closeMoveToList}
+                      openAddLisPopup={openAddLisPopup}
+                      showMoveToList={showMoveToList}
+                    />
+                  );
                 })}
               </div>
             </div>

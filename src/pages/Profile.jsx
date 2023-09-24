@@ -17,7 +17,7 @@ function Profile() {
 
   return (
     <section className=" pb-20 pt-10 ">
-      <div className="w-[90%] m-auto">
+      <div className="w-[84%] m-auto">
         <div className=" mb-6">
           <h1 className="font-semibold text-4xl mb-6">Hi Kamal!</h1>
           <p className="text-sm">

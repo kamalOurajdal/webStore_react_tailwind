@@ -1,6 +1,5 @@
 import React from "react";
 import AboutCard from "../components/about/AboutCard";
-import imag from "../media/about_us.jpg";
 import TeamCard from "../components/about/TeamCard";
 import img_followUS from "../media/team/follow_us.jpg";
 import TrustInfo from "../components/home/TrustInfo";
@@ -39,7 +38,7 @@ function About() {
 
   return (
     <div className="bg-[#f6f9fc] pb-40">
-      <div className="w-[90%]  m-auto  py-10 px-2 ">
+      <div className="w-[84%]  m-auto  py-10 ">
         <h1 className="text-3xl font-bold mb-8">
           This is Kan<span className="text-[#e94560]">9ala</span>{" "}
         </h1>
@@ -78,13 +77,11 @@ function About() {
             <i className="fa-brands fa-pinterest text-[#BD081C] "></i>
             <i className="fa-brands fa-linkedin text-[#0A66C2] "></i>
           </div>
-          {/* <h1 className="text-5xl font-bold text-white absolute">About Us</h1> */}
         </div>
       </div>
-    <div className="w-[90%] m-auto mt-20">
-        <TrustInfo/>
+      <div className="w-[90%] m-auto mt-20">
+        <TrustInfo />
       </div>
-      
     </div>
   );
 }

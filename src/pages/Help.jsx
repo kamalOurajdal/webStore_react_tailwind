@@ -5,11 +5,14 @@ import ContactSupport from "../components/help/ContactSupport";
 
 function Help() {
   return (
-    <section className="w-full  pb-32  ">
+    <section className="w-full  pb-32 ">
       <SearchHelp />
-      <div className="px-20  pt-10 ">
-        <TopicsHelp />
-        <ContactSupport />
+      <div className="w-[84%] m-auto">
+        
+        <div className=" pt-10 ">
+          <TopicsHelp />
+          <ContactSupport />
+        </div>
       </div>
     </section>
   );

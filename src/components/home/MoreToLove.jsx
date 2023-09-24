@@ -1,7 +1,7 @@
 import React from "react";
 import MoreToLoveCard from "./MoreToLoveCard";
 import Data from "./Data";
-function MoreToLove() {
+function MoreToLove({ productItems, addToFavourite, addToCart }) {
   return (
     <section className="w-full ">
       <div className="flex justify-center ">
@@ -13,7 +13,7 @@ function MoreToLove() {
       </div>
       <div className=" ">
         <div className="grid grid-cols-5 gap-4 ">
-          <MoreToLoveCard />
+          <MoreToLoveCard productItems={ productItems } addToCart={addToCart} addToFavourite={addToFavourite}/>
         </div>
       </div>
     </section>

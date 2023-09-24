@@ -1,6 +1,6 @@
 import React from "react";
 
-function AddListPopup({ onClose}) {
+function AddListPopup({ closeAddListPopup}) {
   return (
     <>
         <div className="fixed inset-0 flex items-center justify-center z-50">
@@ -12,7 +12,7 @@ function AddListPopup({ onClose}) {
                 <h1 className=" font-semibold">Add to list</h1>
                 <i
                   className="fa-solid text-gray-400 fa-xmark cursor-pointer text-2xl"
-                  onClick={onClose}
+                  onClick={closeAddListPopup}
                 ></i>
               </div>
               <hr />
@@ -29,7 +29,7 @@ function AddListPopup({ onClose}) {
               </div>
                 <button
                   className="bg-blue-500 text-white px-4 py-2 rounded-md"
-                  onClick={onClose}
+                  onClick={closeAddListPopup}
                 >
                   save
                 </button>

@@ -3,11 +3,24 @@ import ListsPopup from "./ListsPopup";
 
 function LikedItem({
   product,
-  openMoveToList,
-  closeMoveToList,
-  openAddLisPopup,
-  showMoveToList,
+  removeFavouriteItem,
+  addToCart,
+  moveToList,
+  setMoveToListName,
 }) {
+  const [isListNamesPopupOpen, setIsListNamesPopupOpen] = useState(false); 
+  const [isAddListPopupOpen, setIsAddListPopupOpen] = useState(false);
+
+
+  const openListNamesPopup = () => {
+    setIsListNamesPopupOpen(true);
+  };
+  const closeListNamesPopup = () => {
+    setIsListNamesPopupOpen(false);
+  };
+
+
+
   return (
     <div className="h-44  bg-white shadow-md spacy flex justify-between px-12 rounded-md">
       <div className="flex  justify-center items-center space-x-4 w-1/2">
@@ -34,27 +47,40 @@ function LikedItem({
       </div>
 
       <div className="flex flex-col justify-around py-5 ">
-        <button className="flex items-center justify-center space-x-2 border p-2 rounded-md text-[#e94560] hover:bg-[#e94560] hover:text-white duration-500 ease-in-out">
+        <button
+          className="flex items-center justify-center space-x-2 border p-2 rounded-md text-[#e94560] hover:bg-[#e94560] hover:text-white duration-500 ease-in-out"
+          onClick={() => {
+            addToCart(product);
+          }}
+        >
           <i className="fa-solid fa-cart-plus "></i>
           <h2 className="text-sm ">Move to cart</h2>
         </button>
         <button
           className="flex items-center justify-center space-x-2 border p-2 rounded-md text-[#e94560] hover:bg-[#e94560] hover:text-white duration-500 ease-in-out"
-          onClick={openMoveToList}
+          onClick={() => {openListNamesPopup()}}
         >
           <i className="fa-solid fa-list "></i>
           <h2 className="text-sm ">Move to list</h2>
         </button>
-        {showMoveToList && (
+        {isListNamesPopupOpen && (
           <ListsPopup
-            onClose={closeMoveToList}
-            openAddLisPopup={openAddLisPopup}
+            product={product}
+            moveToList={moveToList}
+            closeListNamesPopup={closeListNamesPopup}
+
           />
         )}
-        <button className="flex items-center justify-center space-x-2 border p-2 rounded-md text-red-500 hover:bg-red-500 hover:text-white duration-500 ease-in-out">
+        <button
+          className="flex items-center justify-center space-x-2 border p-2 rounded-md text-red-500 hover:bg-red-500 hover:text-white duration-500 ease-in-out"
+          onClick={() => {
+            removeFavouriteItem(product);
+          }}
+        >
           <i className="fa-solid fa-trash-can "></i>
           <h2 className="text-sm ">Remove</h2>
         </button>
+  
       </div>
     </div>
   );

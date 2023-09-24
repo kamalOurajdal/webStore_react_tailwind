@@ -4,7 +4,8 @@ import { Link, Outlet } from "react-router-dom";
 function Navbar() {
   const productDropdown = (
     <div
-      className={`h-0 py-0 group-hover:block group-hover:h-[168px] top-5 transform-w duration-500 ease-in-out overflow-hidden  absolute z-40 text-xs bg-white   w-48  rounded-lg shadow-md text-gray-600`}
+      className={`h-0 py-0 group-hover:block group-hover:h-[168px] top-5 transform-w duration-500 ease-in-out 
+      overflow-hidden  absolute z-40 text-xs bg-white   w-48  rounded-lg shadow-md text-gray-600`}
     >
       <div className="w-full space-y-4 pt-4">
         <Link
@@ -42,7 +43,9 @@ function Navbar() {
   );
   const dealDropdown = (
     <div
-      className={`h-0 py-0 group-hover:block group-hover:h-[140px] top-5 transform-w duration-500 ease-in-out overflow-hidden  absolute z-40 text-xs  bg-white   w-48  rounded-lg shadow-md text-gray-600`}
+      className={`h-0 py-0 group-hover:block group-hover:h-[140px] 
+      top-5 transform-w duration-500 ease-in-out overflow-hidden 
+       absolute z-40 text-xs  bg-white   w-48  rounded-lg shadow-md text-gray-600`}
     >
       <div className="w-full space-y-4 pt-4 ">
         <Link

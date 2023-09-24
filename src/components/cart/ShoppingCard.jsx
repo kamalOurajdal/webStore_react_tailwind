@@ -1,6 +1,13 @@
-import React from "react";
+import React, { useRef, useState } from "react";
 
-function ShoppingCard({ product }) {
+function ShoppingCard({ product, decrementQty, addToCart, handelRemoveProduct }) {
+  
+  console.log("product :", product);
+
+  const handleRemove = () => {
+    handelRemoveProduct(product);
+  };
+
   return (
     <div className="h-44  bg-white shadow-md spacy flex justify-between px-12 rounded-md">
       <div className="flex  justify-center items-center space-x-4 w-1/2">
@@ -20,24 +27,34 @@ function ShoppingCard({ product }) {
 
         <div className="">
           <h2 className="mb-1 font-semibold">{product.name}</h2>
-          <h2 className=" text-sm text-gray-500"> iste facilis suscipit, itaque nobis voluptatum facere libero!
+          <h2 className=" text-sm text-gray-500">
+            iste facilis suscipit, itaque nobis voluptatum facere libero!
           </h2>
         </div>
       </div>
 
-      <div className="flex flex-col justify-between py-5">
-        <p className="text-right text-lg text-[#e94560] font-bold">${product.price}</p>
-        <div className="flex justify-between items-center  space-x-8">
-          <div className="flex justify-end space-x-6 text-gray-500">
-            <i className="fa-solid fa-trash-can cursor-pointer"></i>
+      <div className="flex flex-col justify-between py-5 w-[26%] ">
+        <p className="text-right text-lg text-[#e94560] font-bold">
+          ${product.price * product.qty}
+        </p>
+        <div className="flex justify-between items-center  ">
+          <div className="flex justify-end space-x-6 text-gray-500 ">
+            <i className="fa-solid fa-trash-can cursor-pointer" onClick={handleRemove}></i>
             <i className="fa-solid fa-heart cursor-pointer"></i>
           </div>
-          <div className="flex justify-between items-center space-x-4">
-            <button className="text-xl font-medium bg-[#f6f9fc] text-[#e94560] w-8 h-8 rounded-full border ">
+          <div className="flex justify-between items-center w-28 ">
+            <button
+              className="text-xl font-medium bg-[#f6f9fc] text-[#e94560] w-8 h-8 rounded-full border "
+              onClick={() => decrementQty(product)}
+            >
               -
             </button>
-            <h1 className="font-semibold text-gray-500">1</h1>
-            <button className="text-xl font-medium bg-[#f6f9fc] text-[#e94560] w-8 h-8  rounded-full border ">
+            <h1 className="font-semibold text-gray-500">{product.qty}</h1>
+            <button
+              className="text-xl font-medium bg-[#f6f9fc] text-[#e94560] w-8 h-8  rounded-full border "
+              onClick={() => addToCart(product)}
+            >
+  
               +
             </button>
           </div>

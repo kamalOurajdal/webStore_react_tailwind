@@ -1,13 +1,27 @@
-import React, { useState } from "react";
-import Data from "../components/home/Data";
+import React, { useEffect, useState } from "react";
 import LikedItem from "../components/favourites/LikedItem";
 import AddListPopup from "../components/favourites/AddListPopup";
 import { lists } from "../components/favourites/Data";
 
-function Favourites() {
-  const { productItems } = Data;
+function Favourites({
+  favouriteItem,
+  setFavouriteItem,
+  addToCart,
+  productsInListName,
+  setSelectedListName,
+  moveToList,
+  selectedListName,
+  productOfSelectedList,
+}) {
   const [showMoveToList, setShowMoveToList] = useState(false);
   const [showAddListPopup, setShowAddListPopup] = useState(false);
+
+  const removeFavouriteItem = (item) => {
+    const updatedFavouriteItem = favouriteItem.filter(
+      (product) => product.id !== item.id
+    );
+    setFavouriteItem(updatedFavouriteItem);
+  };
 
   const openMoveToList = () => {
     setShowMoveToList(true);
@@ -16,7 +30,7 @@ function Favourites() {
     setShowMoveToList(false);
   };
 
-  const openAddLisPopup = () => {
+  const openAddListPopup = () => {
     setShowAddListPopup(true);
   };
   const closeAddListPopup = () => {
@@ -26,17 +40,20 @@ function Favourites() {
   return (
     <section className="bg-[#f6f9fc] pb-32 pt-12">
       <div className="w-[84%] m-auto">
-        <h1 className="text-2xl font-bold">Your favourites</h1>
-        <div className="flex space-x-4 mt-4">
-          <div className="w-1/4 h-fit p-4 text-center rounded-md">
+        <h1 className="text-3xl font-semibold mb-9">Favourites</h1>
+        <div className="flex space-x-8 mt-4">
+          <div className="w-1/4 h-fit  text-center rounded-md">
             <h1 className="font-bold text-gray-600">My lists</h1>
             <hr />
             <div className="space-y-2 pt-4">
               {lists.map((list, index) => {
                 return (
-                  <div
+                  <button
                     key={index}
-                    className="bg-white shadow-md flex justify-between items-center border p-2 rounded cursor-pointer hover:scale-105 duration-500 ease-in-out "
+                    className="w-full bg-white shadow-md flex justify-between items-center border p-2 rounded cursor-pointer hover:scale-105 duration-500 ease-in-out "
+                    onClick={() => {
+                      setSelectedListName(list.name);
+                    }}
                   >
                     <div className="">
                       <h1>{list.name}</h1>
@@ -46,16 +63,16 @@ function Favourites() {
                     </div>
 
                     <i className="fa-solid fa-trash-can cursor-pointer"></i>
-                  </div>
+                  </button>
                 );
               })}
               <button
                 className="text-center text-[#e94560] w-full  bg-white shadow-md  border p-2 rounded cursor-pointer hover:scale-105 duration-500 ease-in-out "
-                onClick={openAddLisPopup}
+                onClick={openAddListPopup}
               >
                 <i className="fa-solid fa-circle-plus mr-1"></i>Add list
               </button>
-              {showAddListPopup && <AddListPopup onClose={closeAddListPopup} />}
+              {showAddListPopup && <AddListPopup closeAddListPopup={closeAddListPopup} />}
             </div>
           </div>
           <div className="flex-grow">
@@ -72,7 +89,7 @@ function Favourites() {
                 />
                 <label htmlFor="select-all">Select all</label>
               </div>
-              <h4>Home list</h4>
+              <h4> list</h4>
               <div className="flex items-center space-x-2">
                 <p>Sort by:</p>
                 <select name="sort" id="sort">
@@ -81,20 +98,22 @@ function Favourites() {
                 </select>
               </div>
             </div>
-            <div className="flex pt-4 h-screen overflow-auto">
+            <div className="flex pt-4 ">
               <div className="space-y-4 w-full">
-                {productItems.map((product, index) => {
-                  return (
-                    <LikedItem
-                      key={index}
-                      product={product}
-                      openMoveToList={openMoveToList}
-                      closeMoveToList={closeMoveToList}
-                      openAddLisPopup={openAddLisPopup}
-                      showMoveToList={showMoveToList}
-                    />
-                  );
-                })}
+                {productOfSelectedList &&  productOfSelectedList.map((product, index) => {
+                      
+                      return (
+                        <LikedItem
+                          key={index}
+                          product={product}
+                          openMoveToList={openMoveToList}
+                          openAddListPopup={openAddListPopup}
+                          removeFavouriteItem={removeFavouriteItem}
+                          addToCart={addToCart}
+                          moveToList={moveToList}
+                        />
+                      );
+                    })}
               </div>
             </div>
           </div>

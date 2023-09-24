@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 
-function Search() {
+function Search({nbrItem}) {
   window.addEventListener("scroll", function () {
     const search = this.document.querySelector("section");
     if (this.window.scrollY > 100) {
@@ -37,7 +37,7 @@ function Search() {
             <div className="relative cursor-pointer">
               <i className="fa-solid fa-cart-shopping text-xl"></i>
               <span className="absolute -right-2 -top-1 text-[9px] w-4 h-4 flex items-center justify-center  bg-[#e94560] rounded-full text-white font-semibold">
-                2
+                {nbrItem ===0 ? "" : nbrItem}
               </span>
             </div>
           </Link>

@@ -4,7 +4,7 @@ import contact_uc_img from "../media/contact_us.jpg";
 function Contact() {
   return (
     <section className="  pt-10 pb-32">
-      <div className="w-[90%]  m-auto ">
+      <div className="w-[84%]  m-auto ">
         <h1 className="font-bold text-3xl">Contact us</h1>
         <p className="text-gray-500 mt-6">
           If you have questions, need assistance with a problem, or simply want

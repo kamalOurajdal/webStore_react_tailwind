@@ -5,11 +5,11 @@ import Head from './Head'
 import Navbar from './Navbar'
 import Search from './Search'
 
-function Header() {
+function Header({nbrItem}) {
   return (
     <header className='w-screen'>
         <Head/>
-        <Search/>
+        <Search nbrItem = {nbrItem}/>
         <Navbar/>
     </header>
   )

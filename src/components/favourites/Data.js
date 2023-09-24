@@ -1,4 +1,8 @@
 const lists = [
+  {
+    name: "All",
+    items: 6,
+  },
     {
       name: "Home",
       items: 6,

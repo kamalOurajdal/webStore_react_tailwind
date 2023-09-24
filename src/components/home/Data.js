@@ -1,4 +1,4 @@
-const Data = {
+let Data = {
     productItems: [
       {
         id: 1,

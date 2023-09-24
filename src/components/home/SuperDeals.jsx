@@ -1,9 +1,7 @@
 import React from "react";
 import SuperCard from "./SuperCard";
-import Data from "./Data";
 
-function SuperDeals() {
-  const { productItems } = Data;
+function SuperDeals({productItems, addToCart, addToFavourite}) {
   return (
     <>
       <section className="  py-10 flex justify-center">
@@ -18,7 +16,7 @@ function SuperDeals() {
             <button>View all <i className="fa-solid fa-caret-right"></i></button>
           </div>
 
-          <SuperCard productItems={productItems} />
+          <SuperCard productItems={productItems} addToCart={addToCart} addToFavourite={addToFavourite}/>
         </div>
       </section>
     </>

@@ -1,7 +1,7 @@
 import React from "react";
 import DiscountCard from "./DiscountCard";
 
-function Discounts() {
+function Discounts({ productItems }) {
   return (
     <>
       <section className=" rounded-xl flex items-center justify-center">
@@ -16,7 +16,7 @@ function Discounts() {
               <i className="fa-solid fa-caret-right mr-4"></i>
             </div>
           </div>
-          <DiscountCard />
+          <DiscountCard productItems={productItems}/>
         </div>
       </section>
     </>

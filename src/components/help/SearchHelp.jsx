@@ -2,8 +2,9 @@ import React from "react";
 
 function SearchHelp() {
   return (
-    <div className="flex justify-between px-20  pt-10 bg-gradient-to-b from-[#FFECEA] to-white">
-      <div className="leading-10">
+    <div className=" pt-12 bg-gradient-to-b from-[#FFECEA] to-white">
+      <div className="flex justify-between w-[84%] m-auto">
+        <div className="leading-10">
         <h1 className="text-3xl font-bold ">Hi,</h1>
         <h1>What can we help you with?</h1>
       </div>
@@ -24,6 +25,8 @@ function SearchHelp() {
           </div>
         </div>
       </div>
+      </div>
+      
     </div>
   );
 }

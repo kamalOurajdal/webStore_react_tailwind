@@ -1,6 +1,6 @@
 import React from "react";
 
-function SummaryCard() {
+function SummaryCard({totalPrice}) {
   return (
     <div className="bg-white shadow-md h-fit flex-grow p-5 flex flex-col items-center rounded-md">
       <div className="leading-9 w-full">
@@ -15,7 +15,7 @@ function SummaryCard() {
         </div>
         <div className="flex items-center justify-between font-bold">
           <p>Total</p>
-          <p className="text-[#e94560] text-lg">$200</p>
+          <p className="text-[#e94560] text-lg">{totalPrice}</p>
         </div>
       </div>
       <button className="bg-[#FF472E] w-full rounded-md mt-4 py-1 text-white font-medium">Checkout</button>

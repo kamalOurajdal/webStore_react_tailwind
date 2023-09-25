@@ -12,7 +12,7 @@ import Contact from "./pages/Contact";
 import Login from "./pages/Login";
 import Favourites from "./pages/Favourites";
 import Data from "./components/home/Data";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
 function App() {
   const { productItems } = Data;
@@ -56,10 +56,9 @@ function App() {
   };
 
   const [favouriteItem, setFavouriteItem] = useState([]);
-  const [moveTolistName, setMoveToListName] = useState("");
   const [selectedListName, setSelectedListName] = useState("All");
 
-  const moveToList = (product, toList) => {
+/*   const moveToList = (product, toList) => {
     console.log("to list", toList);
 
     setProductsInListName((prevProductsInListName) => {
@@ -82,15 +81,12 @@ function App() {
 
       return updatedProductsInListName;
     });
-  };
+  }; */
 
 
 
-  const [productsInListName, setProductsInListName] = useState([]);
-  // a new state that holds product of the selected list name
-  const [productOfSelectedList, setProductOfSelectedList] = useState([]);
 
-  const itemsOfList = (selectedListName) => {
+/*   const itemsOfList = (selectedListName) => {
     if (selectedListName === "All") {
       return favouriteItem;
     } else {
@@ -101,7 +97,27 @@ function App() {
         return [];
       }
     }
-  };
+  }; */
+
+  const changeListTo = (product, listName) =>{
+    console.log("listName",listName);
+    const productExist = favouriteItem.find((item) => item.id === product.id);
+    if (productExist) {
+      setFavouriteItem(
+        favouriteItem.map((item) =>
+          item.id === product.id
+            ? { ...productExist, listName: listName }
+            : item
+        )
+      );
+    }
+  }
+  const favouriteItemsWithList = (listName) =>{
+    if(listName === "All"){
+      return favouriteItem
+    }
+    return favouriteItem.filter((item) => item.listName === listName);
+  }
 
   /*   useEffect(() => {
     const itemsOfList = () => {
@@ -119,8 +135,7 @@ function App() {
     itemsOfList();
   }, [selectedListName]); */
 
-  console.log("productsInListName", productsInListName);
-
+  console.log("favourites item with list ", favouriteItem);
   return (
     <div className=" w-screen font-[poppins] ">
       <Header nbrItem={cartItem.length} />
@@ -161,14 +176,10 @@ function App() {
                 favouriteItem={favouriteItem}
                 setFavouriteItem={setFavouriteItem}
                 addToCart={addToCart}
-                productsInListName={productsInListName}
                 setSelectedListName={setSelectedListName}
-                moveToList={moveToList}
-                setMoveToListName={setMoveToListName}
-                moveTolistName={moveTolistName}
                 selectedListName={selectedListName}
-                productOfSelectedList={productOfSelectedList}
-                itemsOfList={itemsOfList}
+                changeListTo={changeListTo}
+                favouriteItemsWithList={favouriteItemsWithList}
               />
             }
           />

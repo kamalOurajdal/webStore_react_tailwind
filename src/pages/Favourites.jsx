@@ -7,14 +7,11 @@ function Favourites({
   favouriteItem,
   setFavouriteItem,
   addToCart,
-  productsInListName,
   setSelectedListName,
-  moveToList,
   selectedListName,
-  productOfSelectedList,
-  itemsOfList,
+  changeListTo,
+  favouriteItemsWithList
 }) {
-  const [showMoveToList, setShowMoveToList] = useState(false);
   const [showAddListPopup, setShowAddListPopup] = useState(false);
 
   const removeFavouriteItem = (item) => {
@@ -24,12 +21,7 @@ function Favourites({
     setFavouriteItem(updatedFavouriteItem);
   };
 
-  const openMoveToList = () => {
-    setShowMoveToList(true);
-  };
-  const closeMoveToList = () => {
-    setShowMoveToList(false);
-  };
+ 
 
   const openAddListPopup = () => {
     setShowAddListPopup(true);
@@ -61,7 +53,7 @@ function Favourites({
                     <div className="">
                       <h1>{list.name}</h1>
                       <h6 className="text-xs text-gray-500">
-                        {itemsOfList(list.name).length} items
+                        {favouriteItemsWithList(list.name).length} items
                       </h6>
                     </div>
 
@@ -105,17 +97,15 @@ function Favourites({
             </div>
             <div className="flex pt-4 ">
               <div className="space-y-4 w-full">
-                {productOfSelectedList &&
-                  itemsOfList(selectedListName).map((product, index) => {
+                {
+                  favouriteItemsWithList(selectedListName).map((product, index) => {
                     return (
                       <LikedItem
                         key={index}
                         product={product}
-                        openMoveToList={openMoveToList}
-                        openAddListPopup={openAddListPopup}
                         removeFavouriteItem={removeFavouriteItem}
                         addToCart={addToCart}
-                        moveToList={moveToList}
+                        changeListTo={changeListTo}
                       />
                     );
                   })}

@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { lists } from "./Data";
 
-function ListsPopup({ product, moveToList, closeListNamesPopup }) {
+function ListsPopup({ product, closeListNamesPopup, changeListTo }) {
   
   const [isAddListPopupOpen, setIsAddListPopupOpen] = useState(false);
   const openAddListPopup = () => {
@@ -46,7 +46,7 @@ function ListsPopup({ product, moveToList, closeListNamesPopup }) {
             {lists.map((list, index) => {
               const handleListNamesPopup = () => {
                 closeListNamesPopup();
-                moveToList(product, list.name);
+                changeListTo(product, list.name)
                 console.log("clicked product", product);
               };
               return (

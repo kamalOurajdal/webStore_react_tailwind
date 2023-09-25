@@ -5,11 +5,9 @@ function LikedItem({
   product,
   removeFavouriteItem,
   addToCart,
-  moveToList,
-  setMoveToListName,
+  changeListTo,
 }) {
   const [isListNamesPopupOpen, setIsListNamesPopupOpen] = useState(false); 
-  const [isAddListPopupOpen, setIsAddListPopupOpen] = useState(false);
 
 
   const openListNamesPopup = () => {
@@ -66,8 +64,8 @@ function LikedItem({
         {isListNamesPopupOpen && (
           <ListsPopup
             product={product}
-            moveToList={moveToList}
             closeListNamesPopup={closeListNamesPopup}
+            changeListTo={changeListTo}
 
           />
         )}

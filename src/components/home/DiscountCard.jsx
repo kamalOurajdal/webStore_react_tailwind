@@ -1,5 +1,4 @@
 import React from "react";
-import Data from "./Data";
 import Slider from "react-slick";
 
 function DiscountCard({ productItems }) {
@@ -13,25 +12,30 @@ function DiscountCard({ productItems }) {
   };
   return (
     <>
-      <Slider {...settings}>
-        {productItems.map((value, index) => (
-          <div
-            key={index}
-            className=" mt-6 pt-4 bg-white  rounded-2xl shadow-md group cursor-pointer mx-4"
-          >
-            <div className="flex justify-center items-center ">
-              <img
-                src={value.cover}
-                alt=""
-                className="w-24 group-hover:w-28 transform duration-500 ease-in-out"
-              />
+      <Slider {...settings} className="">
+        {productItems.map((value, index) => {
+          return (
+            <div className=" h-60">
+              <div
+              key={index}
+              className=" mt-6 bg-white mx-3  pt-4 rounded-2xl shadow-md group cursor-pointer hover:scale-105 duration-500 ease-in-out"
+            >
+              <div className="flex justify-center items-center ">
+                <img
+                  src={value.cover}
+                  alt=""
+                  className="w-24 group transform"
+                />
+              </div>
+              <div className="ml-4 mt-3">
+                <h4 className="font-bold">{value.name}</h4>
+                <span>${value.price}</span>
+              </div>
             </div>
-            <div className="ml-4 mt-3">
-              <h4 className="font-bold">{value.name}</h4>
-              <span>${value.price}</span>
             </div>
-          </div>
-        ))}
+            
+          );
+        })}
       </Slider>
     </>
   );

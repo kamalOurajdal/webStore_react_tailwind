@@ -13,7 +13,16 @@ function MoreToLove({ productItems, addToFavourite, addToCart }) {
       </div>
       <div className=" ">
         <div className="grid grid-cols-5 gap-4 ">
-          <MoreToLoveCard productItems={ productItems } addToCart={addToCart} addToFavourite={addToFavourite}/>
+          {productItems.map((product, index) => {
+            return (
+              <MoreToLoveCard
+              key={index}
+                product={product}
+                addToCart={addToCart}
+                addToFavourite={addToFavourite}
+              />
+            );
+          })}
         </div>
       </div>
     </section>

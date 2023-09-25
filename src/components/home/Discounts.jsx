@@ -4,8 +4,8 @@ import DiscountCard from "./DiscountCard";
 function Discounts({ productItems }) {
   return (
     <>
-      <section className=" rounded-xl flex items-center justify-center">
-        <div className="w-full h-60">
+      <section className=" rounded-xl ">
+        <div className="w-full h-64">
           <div className="flex justify-between items-center">
             <div className="flex items-center ml-4">
               <i className="fa-solid fa-gift mr-1 text-xl text-[#e94560]"></i>

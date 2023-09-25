@@ -1,8 +1,12 @@
 import React, { useState } from "react";
-import { lists } from "./Data";
 
-function ListsPopup({ product, closeListNamesPopup, changeListTo }) {
-  
+function ListsPopup({
+  product,
+  closeListNamesPopup,
+  changeListTo,
+  handleAddListName,
+  listNames,
+}) {
   const [isAddListPopupOpen, setIsAddListPopupOpen] = useState(false);
   const openAddListPopup = () => {
     setIsAddListPopupOpen(true);
@@ -11,10 +15,32 @@ function ListsPopup({ product, closeListNamesPopup, changeListTo }) {
     setIsAddListPopupOpen(false);
   };
 
-  const handleAddListButton =() =>{
-    isAddListPopupOpen ? closeAddListPopup() : openAddListPopup()
-  }
+  const [listName, setListName] = useState("");
+  const onChangeHandler = (e) => {
+    const newListName = e.target.value;
+    setListName(newListName);
+  };
 
+  const handleAddListButton = () => {
+    //check if the listName already exist in the listNames
+    const isListNameExist = listNames.find(
+      (list) => list.name.toLowerCase() === listName.toLowerCase()
+    );
+    if (isListNameExist) {
+      alert("list name already exist");
+    } else {
+      if (isAddListPopupOpen) {
+        if (listName) {
+          handleAddListName(listName);
+          closeAddListPopup();
+          setListName("");
+        }
+      } else {
+        openAddListPopup();
+      }
+    }
+  };
+ 
   return (
     <>
       <div className="fixed inset-0 flex items-center justify-center z-50">
@@ -30,24 +56,41 @@ function ListsPopup({ product, closeListNamesPopup, changeListTo }) {
           </div>
 
           <div className=" h-52 overflow-y-auto w-full">
-            <div className={`${isAddListPopupOpen ? "justify-between ":"justify-center"} flex rounded border-b`}>
-              <input type="text" 
-              placeholder="list name" 
-              className={`${isAddListPopupOpen ?"flex-grow pl-12 border-r ":""} w-0 outline-none text-sm text-center `}/>
+            <div
+              className={`${
+                isAddListPopupOpen ? "justify-between " : "justify-center"
+              } flex rounded border-b`}
+            >
+              <input
+                type="text"
+                value={listName}
+                placeholder="list name"
+                className={`${
+                  isAddListPopupOpen ? "flex-grow pl-12 border-r " : ""
+                } w-0 outline-none text-sm text-center `}
+                onChange={onChangeHandler}
+              />
               <button
-                className={`${isAddListPopupOpen ? "bg-[#e94560] bg-opacity-20":"w-full"}   text-center text-[#e94560]  p-2 px-4  cursor-pointer `}
-                onClick={() => {handleAddListButton()}}
+                className={`${
+                  isAddListPopupOpen ? "bg-[#e94560] bg-opacity-20" : "w-full"
+                }   text-center text-[#e94560]  p-2 px-4  cursor-pointer `}
+                onClick={() => {
+                  handleAddListButton();
+                }}
               >
-                <i className="fa-solid fa-circle-plus mr-1"></i>
-                <span className= {`${isAddListPopupOpen ? "hidden":""}`}>Add list</span>
+                <i
+                  className="fa-solid fa-circle-plus mr-1"
+                  onClick={() => {}}
+                ></i>
+                <span className={`${isAddListPopupOpen ? "hidden" : ""}`}>
+                  Add list
+                </span>
               </button>
-              
             </div>
-            {lists.map((list, index) => {
+            {listNames.map((list, index) => {
               const handleListNamesPopup = () => {
                 closeListNamesPopup();
-                changeListTo(product, list.name)
-                console.log("clicked product", product);
+                changeListTo(product, list.name);
               };
               return (
                 <button

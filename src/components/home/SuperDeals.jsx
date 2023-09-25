@@ -1,7 +1,7 @@
 import React from "react";
 import SuperCard from "./SuperCard";
 
-function SuperDeals({productItems, addToCart, addToFavourite}) {
+function SuperDeals({ productItems, addToCart, addToFavourite }) {
   return (
     <>
       <section className="  py-10 flex justify-center">
@@ -13,10 +13,16 @@ function SuperDeals({productItems, addToCart, addToFavourite}) {
                 Super <span className="text-red-500">Delas</span>{" "}
               </h1>
             </div>
-            <button>View all <i className="fa-solid fa-caret-right"></i></button>
+            <button>
+              View all <i className="fa-solid fa-caret-right"></i>
+            </button>
           </div>
-
-          <SuperCard productItems={productItems} addToCart={addToCart} addToFavourite={addToFavourite}/>
+         
+          <SuperCard
+            productItems={productItems}
+            addToCart={addToCart}
+            addToFavourite={addToFavourite}
+          />
         </div>
       </section>
     </>

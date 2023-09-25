@@ -30,12 +30,13 @@ function Home({ addToCart, productItems, addToFavourite }) {
             addToCart={addToCart}
             addToFavourite={addToFavourite}
           />
-          <MoreToLove
-            productItems={productItems}
-            addToCart={addToCart}
-            addToFavourite={addToFavourite}
-          />
-          {/* <{TrustInfo />{}} */}
+          {
+            <MoreToLove
+              productItems={productItems}
+              addToCart={addToCart}
+              addToFavourite={addToFavourite}
+            />
+          }
         </div>
       </div>
     </section>

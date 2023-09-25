@@ -13,6 +13,7 @@ import Login from "./pages/Login";
 import Favourites from "./pages/Favourites";
 import Data from "./components/home/Data";
 import { useState } from "react";
+import ProductDetails from "./pages/ProductDetails";
 
 function App() {
   const { productItems } = Data;
@@ -57,50 +58,9 @@ function App() {
 
   const [favouriteItem, setFavouriteItem] = useState([]);
   const [selectedListName, setSelectedListName] = useState("All");
-
-/*   const moveToList = (product, toList) => {
-    console.log("to list", toList);
-
-    setProductsInListName((prevProductsInListName) => {
-      const updatedProductsInListName = { ...prevProductsInListName };
-
-      if (!updatedProductsInListName[toList]) {
-        updatedProductsInListName[toList] = [];
-      }
-
-      // Check if the product already exists in the list before adding
-      const existingProductIndex = updatedProductsInListName[toList].findIndex(
-        (item) => item.id === product.id
-      );
-
-      if (existingProductIndex === -1) {
-        updatedProductsInListName[toList].push(product);
-      } else {
-        console.log("Product already exists in the list.");
-      }
-
-      return updatedProductsInListName;
-    });
-  }; */
-
-
-
-
-/*   const itemsOfList = (selectedListName) => {
-    if (selectedListName === "All") {
-      return favouriteItem;
-    } else {
-      if (productsInListName[selectedListName]) {
-        return productsInListName[selectedListName];
-      } else {
-        console.log(`List '${selectedListName}' has no items.`);
-        return [];
-      }
-    }
-  }; */
+  
 
   const changeListTo = (product, listName) =>{
-    console.log("listName",listName);
     const productExist = favouriteItem.find((item) => item.id === product.id);
     if (productExist) {
       setFavouriteItem(
@@ -119,23 +79,6 @@ function App() {
     return favouriteItem.filter((item) => item.listName === listName);
   }
 
-  /*   useEffect(() => {
-    const itemsOfList = () => {
-      console.log("selectedListName:", selectedListName);
-      console.log("Favourites:", favouriteItem);
-      if (selectedListName === "All") {
-        setProductOfSelectedList(favouriteItem);
-      }
-      else{
-        setProductOfSelectedList(productsInListName[selectedListName]);
-      }
-      console.log("productOfSelectedList",productOfSelectedList);
-    };
-  
-    itemsOfList();
-  }, [selectedListName]); */
-
-  console.log("favourites item with list ", favouriteItem);
   return (
     <div className=" w-screen font-[poppins] ">
       <Header nbrItem={cartItem.length} />
@@ -184,6 +127,7 @@ function App() {
             }
           />
         </Route>
+        <Route path="product_details" element={<ProductDetails />} />
       </Routes>
       <Footer />
     </div>

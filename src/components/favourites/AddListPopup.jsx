@@ -1,6 +1,12 @@
-import React from "react";
+import React, { useState } from "react";
 
-function AddListPopup({ closeAddListPopup}) {
+function AddListPopup({ closeAddListPopup, handleAddListName}) {
+  // onchange handler
+  const [listName, setListName] = useState("")
+  const onChangeHandler = (e) =>{
+    const newListName = e.target.value;
+    setListName(newListName)
+  }
   return (
     <>
         <div className="fixed inset-0 flex items-center justify-center z-50">
@@ -17,19 +23,20 @@ function AddListPopup({ closeAddListPopup}) {
               </div>
               <hr />
             </div>
-            <div className=" mt-4 flex flex-col space-y-2">
-              <div className="text-left">
+            <div className=" mt-4 flex flex-col items-center space-y-1">
+              <div className="text-left w-full">
                 <label className="block text-sm ml-4">List name</label>
                 <input
                   type="text"
                   className="pl-4 w-full border border-gray-300 p-2 rounded-md focus:outline-none"
+                  onChange={onChangeHandler}
                 />
                 <h6 className="text-xs text-right mt-1">0/50</h6>
                 
               </div>
                 <button
-                  className="bg-blue-500 text-white px-4 py-2 rounded-md"
-                  onClick={closeAddListPopup}
+                  className="w-24  px-4 py-2 rounded-md bg-[#e94560] text-white hover:scale-[1.02] hover:shadow-md duration-200 ease-in-out"
+                  onClick={() => {handleAddListName(listName);closeAddListPopup()}}
                 >
                   save
                 </button>

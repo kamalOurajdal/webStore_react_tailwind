@@ -12,6 +12,7 @@ function Favourites({
   moveToList,
   selectedListName,
   productOfSelectedList,
+  itemsOfList,
 }) {
   const [showMoveToList, setShowMoveToList] = useState(false);
   const [showAddListPopup, setShowAddListPopup] = useState(false);
@@ -37,6 +38,8 @@ function Favourites({
     setShowAddListPopup(false);
   };
 
+  
+
   return (
     <section className="bg-[#f6f9fc] pb-32 pt-12">
       <div className="w-[84%] m-auto">
@@ -58,7 +61,7 @@ function Favourites({
                     <div className="">
                       <h1>{list.name}</h1>
                       <h6 className="text-xs text-gray-500">
-                        {list.items} items
+                        {itemsOfList(list.name).length} items
                       </h6>
                     </div>
 
@@ -72,7 +75,9 @@ function Favourites({
               >
                 <i className="fa-solid fa-circle-plus mr-1"></i>Add list
               </button>
-              {showAddListPopup && <AddListPopup closeAddListPopup={closeAddListPopup} />}
+              {showAddListPopup && (
+                <AddListPopup closeAddListPopup={closeAddListPopup} />
+              )}
             </div>
           </div>
           <div className="flex-grow">
@@ -100,20 +105,20 @@ function Favourites({
             </div>
             <div className="flex pt-4 ">
               <div className="space-y-4 w-full">
-                {productOfSelectedList &&  productOfSelectedList.map((product, index) => {
-                      
-                      return (
-                        <LikedItem
-                          key={index}
-                          product={product}
-                          openMoveToList={openMoveToList}
-                          openAddListPopup={openAddListPopup}
-                          removeFavouriteItem={removeFavouriteItem}
-                          addToCart={addToCart}
-                          moveToList={moveToList}
-                        />
-                      );
-                    })}
+                {productOfSelectedList &&
+                  itemsOfList(selectedListName).map((product, index) => {
+                    return (
+                      <LikedItem
+                        key={index}
+                        product={product}
+                        openMoveToList={openMoveToList}
+                        openAddListPopup={openAddListPopup}
+                        removeFavouriteItem={removeFavouriteItem}
+                        addToCart={addToCart}
+                        moveToList={moveToList}
+                      />
+                    );
+                  })}
               </div>
             </div>
           </div>

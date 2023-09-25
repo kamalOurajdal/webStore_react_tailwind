@@ -48,32 +48,6 @@ function App() {
     }
   };
 
-  const [favouriteItem, setFavouriteItem] = useState([]);
-  const [moveTolistName, setMoveToListName] = useState("");
-  const [selectedListName, setSelectedListName] = useState("All");
-
-  const moveToList = (product, toList) => {
-    console.log("to list", toList);
-    const productExist = favouriteItem.find((item) => item.id === product.id);
-    
-    if (productExist) {
-      setProductsInListName((prevProductsInListName) => {
-        const updatedProductsInListName = { ...prevProductsInListName };
-  
-        // Ensure that productsInListName[moveTolistName] is an array
-        if (!updatedProductsInListName[toList]) {
-          updatedProductsInListName[toList] = [];
-        }
-  
-        // Add the product to the specified list
-        updatedProductsInListName[toList].push(productExist);
-  
-        return updatedProductsInListName;
-      });
-    }
-  };
-  
-
   const addToFavourite = (product) => {
     const productExist = favouriteItem.find((item) => item.id === product.id);
     if (!productExist) {
@@ -81,28 +55,71 @@ function App() {
     }
   };
 
+  const [favouriteItem, setFavouriteItem] = useState([]);
+  const [moveTolistName, setMoveToListName] = useState("");
+  const [selectedListName, setSelectedListName] = useState("All");
+
+  const moveToList = (product, toList) => {
+    console.log("to list", toList);
+
+    setProductsInListName((prevProductsInListName) => {
+      const updatedProductsInListName = { ...prevProductsInListName };
+
+      if (!updatedProductsInListName[toList]) {
+        updatedProductsInListName[toList] = [];
+      }
+
+      // Check if the product already exists in the list before adding
+      const existingProductIndex = updatedProductsInListName[toList].findIndex(
+        (item) => item.id === product.id
+      );
+
+      if (existingProductIndex === -1) {
+        updatedProductsInListName[toList].push(product);
+      } else {
+        console.log("Product already exists in the list.");
+      }
+
+      return updatedProductsInListName;
+    });
+  };
+
+
+
   const [productsInListName, setProductsInListName] = useState([]);
   // a new state that holds product of the selected list name
-  const [productOfSelectedList, setProductOfSelectedList] = useState([])
-  
-  useEffect(() => {
+  const [productOfSelectedList, setProductOfSelectedList] = useState([]);
+
+  const itemsOfList = (selectedListName) => {
+    if (selectedListName === "All") {
+      return favouriteItem;
+    } else {
+      if (productsInListName[selectedListName]) {
+        return productsInListName[selectedListName];
+      } else {
+        console.log(`List '${selectedListName}' has no items.`);
+        return [];
+      }
+    }
+  };
+
+  /*   useEffect(() => {
     const itemsOfList = () => {
       console.log("selectedListName:", selectedListName);
       console.log("Favourites:", favouriteItem);
-      
       if (selectedListName === "All") {
         setProductOfSelectedList(favouriteItem);
       }
       else{
         setProductOfSelectedList(productsInListName[selectedListName]);
       }
+      console.log("productOfSelectedList",productOfSelectedList);
     };
   
     itemsOfList();
-  }, [selectedListName, setProductOfSelectedList]);
-  
+  }, [selectedListName]); */
 
-  console.log("productsInListName",productsInListName);
+  console.log("productsInListName", productsInListName);
 
   return (
     <div className=" w-screen font-[poppins] ">
@@ -151,6 +168,7 @@ function App() {
                 moveTolistName={moveTolistName}
                 selectedListName={selectedListName}
                 productOfSelectedList={productOfSelectedList}
+                itemsOfList={itemsOfList}
               />
             }
           />

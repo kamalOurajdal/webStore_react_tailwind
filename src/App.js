@@ -14,6 +14,8 @@ import Favourites from "./pages/Favourites";
 import Data from "./components/home/Data";
 import { useState } from "react";
 import ProductDetails from "./pages/ProductDetails";
+import NewProducts from "./components/product/NewProducts";
+import SearchResult from "./pages/SearchResult";
 
 function App() {
   const { productItems } = Data;
@@ -108,6 +110,7 @@ function App() {
           />
           <Route path="help" element={<Help />} />
           <Route path="about" element={<About />} />
+          <Route path="search" element={<SearchResult />} />
           <Route path="contact" element={<Contact />} />
           <Route path="login" element={<Login />} />
           <Route path="register" element={<Register />} />
@@ -128,6 +131,9 @@ function App() {
           />
         </Route>
         <Route path="product_details" element={<ProductDetails />} />
+        <Route path="products" >
+          <Route path="new" element={<NewProducts/>} />
+        </Route>
       </Routes>
       <Footer />
     </div>

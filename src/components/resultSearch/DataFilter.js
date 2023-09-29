@@ -18,6 +18,24 @@ const brandOptions = [
   { value: "New Balance", label: "New Balance" },
 ];
 
+const sortByOptions = [
+  {
+    value :"Popularity"
+  },
+  {
+    value :"Price: Low to High"
+  },
+  {
+    value :"Price: High to Low"
+  },
+  {
+    value :"Newest"
+  },
+  {
+    value :"Product Name"
+  },
+]
+
 // styles for color select
 const colourStyles = {
   control: (styles) => ({
@@ -101,4 +119,4 @@ const brandStyles = {
   }),
 };
 
-export { colourOptions, brandOptions, colourStyles, brandStyles };
+export { colourOptions, brandOptions, colourStyles, brandStyles, sortByOptions };

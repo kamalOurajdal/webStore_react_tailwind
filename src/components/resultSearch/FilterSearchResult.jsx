@@ -2,7 +2,13 @@ import React, { useState } from "react";
 import ReactSlider from "react-slider";
 import Select from "react-select";
 import makeAnimated from "react-select/animated";
-import { brandOptions, brandStyles, colourOptions, colourStyles } from "./DataFilter";
+import {
+  brandOptions,
+  brandStyles,
+  colourOptions,
+  colourStyles,
+  sortByOptions,
+} from "./DataFilter";
 
 function FilterSearchResult() {
   const animatedComponents = makeAnimated();
@@ -13,7 +19,6 @@ function FilterSearchResult() {
   const [selectedColor, setSelectedColor] = useState(null);
   const [selectedBrand, setSelectedBrand] = useState(null);
 
-  
   const handleChangeColor = (selectedOption) => {
     setSelectedColor(selectedOption);
   };
@@ -21,20 +26,73 @@ function FilterSearchResult() {
     setSelectedBrand(selectedBrand);
   };
 
+  const handleChangePrice =(e) =>{
+    /* check witch value is changing */
+    const name = e.target.name;
+    if(name ==="min"){
+      e.target.value > 0 ? setPriceRange([e.target.value, priceRange[1]]) : setPriceRange(["", priceRange])
+    }
+    else{
+      e.target.value > 0 ? setPriceRange([priceRange[0], e.target.value]) : setPriceRange([priceRange[0], ""])
+    }
+  }
+
   return (
-    <nav className="spac">
-      <div className="w-72 h-screen p-4">
-        <div className="mt-10">
-          <h6 className="text-gray-500 ">Price range:</h6>
-          <div className="w-full flex  justify-between font-bold">
-            <h1>Min : {priceRange[0]}</h1>
-            <h1>Max : {priceRange[1]}</h1>
+    <nav className=" bg-white rounded-md shadow-md border">
+      <div className="w-72 p-4 ">
+        <div>
+          <h1 className="text-lg font-semibold text-gray-500">
+            {" "}
+            <i className="fa-solid fa-filter text-sm"></i> Filters
+          </h1>
+          <hr />
+          {/* sort by */}
+          <div className="mt-4">
+            <h1 className="font-bold">Sort by:</h1>
+            <div className="flex flex-col">
+              {sortByOptions.map((option, index) => (
+                <div
+                  key={index}
+                  className="flex items-center cursor-pointer mt-2 border px-4 h-9 rounded hover:bg-blue-100"
+                >
+                  {option.value}
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+        <div className="mt-4">
+          <h6 className="font-semibold">Price range:</h6>
+          <div className="w-full flex  justify-between ">
+            <label htmlFor="min">
+              Min:
+              <input
+                type="number"
+                id="min"
+                name="min"
+                className="w-16 px-2 outline-none h-8 border  rounded-med"
+                onChange={handleChangePrice}
+                value={priceRange[0]}
+              />
+            </label>
+            <label htmlFor="max" className="">
+              Max:
+              <input
+                type="number"
+                id="max"
+                name="max"
+                className="w-16 px-2 outline-none h-8 border rounded-med"
+                onChange={handleChangePrice}
+                value={priceRange[1]}
+              />
+            </label>
           </div>
           <ReactSlider
             className=" w-full mt-6 "
-            thumbClassName="cursor-pointer w-5 h-5 border border-blue-500 border-2 bg-white rounded-full -top-[8px] outline-none"
+            thumbClassName="cursor-pointer w-4 h-4 border border-[#e94560] border-2 bg-[#e94560] rounded-full -top-[6px] outline-none"
             trackClassName="track"
             defaultValue={[20, 80]}
+            value={priceRange}
             renderTrack={(props, state) => (
               <div {...props} className={props.className} />
             )}
@@ -48,7 +106,7 @@ function FilterSearchResult() {
             minDistance={10}
           />
         </div>
-        <div className="mt-12">
+        <div className="mt-16">
           <h1>Brand:</h1>
           <Select
             components={animatedComponents}
@@ -58,7 +116,7 @@ function FilterSearchResult() {
             styles={brandStyles}
           />
         </div>
-        <div className="">
+        <div className="mt-2">
           <h1 className="">Color:</h1>
           <Select
             className=""

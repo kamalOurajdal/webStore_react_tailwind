@@ -3,14 +3,14 @@ import { Link } from "react-router-dom";
 
 function Register() {
   return (
-    <section className=" flex items-start justify-around  pb-20 pt-16 bg-[#f6f9fc]">
+    <section className=" flex flex-col items-center px-4 lg:px-0 lg:flex-row lg:items-start lg:justify-around  pb-20 pt-16 bg-[#f6f9fc]">
       <div>
         <h1 className="text-3xl font-bold mb-10">
           Create a Kan<span className="text-[#e94560]">9ala</span> <br />{" "}
           account
         </h1>
         <p className=" text-gray-500">
-          create your kan9ala account and open the door <br /> to a whole new
+          create your kan9ala account and open the door <br className="hidden lg:flex"/> to a whole new
           way of shopping.
         </p>
         <p className="text-xs mt-2 text-gray-400">
@@ -20,8 +20,8 @@ function Register() {
           </Link>
         </p>
       </div>
-      <div className="w-[45%]  shadow-md  mr-44 ml-20 py-4 bg-white rounded-xl   flex justify-center items-center">
-        <div className="w-full px-10">
+      <div className="w-full lg:w-[45%] mt-8 lg:mt-0  shadow-md   lg:ml-20 py-4 bg-white rounded-xl   flex justify-center items-center">
+        <div className="w-full px-5 lg:px-10">
           <p className=" text-left font-semibold text-gray-600">
             Design your personal oasis at Kan9ala. <br /> Plus, it's absolutely
             free to join!

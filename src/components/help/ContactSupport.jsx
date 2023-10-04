@@ -2,13 +2,13 @@ import React from "react";
 
 function ContactSupport() {
   return (
-    <div className=" m-auto flex flex-col items-center ">
-        <div className=" flex  items-center  w-1/2 mb-6">
+    <div className=" m-auto flex flex-col items-center mx-4 lg:mx-0 ">
+        <div className=" flex  items-center  lg:w-1/2 mb-6">
           <div className="flex-grow border-t  border-gray-300"></div>
           <h1 className="font-bold text-xl mx-4 text-gray-500">Need more help?</h1>
           <div className="flex-grow border-t  border-gray-300"></div>
         </div>
-      <div className="w-1/2 bg-[#f6f9fc] px-10 rounded-md">
+      <div className="w-full lg:w-1/2 bg-[#f6f9fc] px-4 lg:px-10 rounded-md">
         <form action="" className="w-full my-8 ">
           <div className="relative ">
             <input

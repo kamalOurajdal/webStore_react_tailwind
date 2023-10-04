@@ -12,7 +12,7 @@ function AddListPopup({ closeAddListPopup, handleAddListName}) {
         <div className="fixed inset-0 flex items-center justify-center z-50">
           <div className="fixed inset-0 bg-black bg-opacity-50 "></div>
 
-          <div className="bg-white z-50 w-1/3 rounded-lg px-4 pb-4">
+          <div className="bg-white z-50 w-80 lg:w-1/3 rounded-lg px-4 pb-4">
             <div className=" rounded-lg ">
               <div className="flex justify-between items-center">
                 <h1 className=" font-semibold">Add to list</h1>

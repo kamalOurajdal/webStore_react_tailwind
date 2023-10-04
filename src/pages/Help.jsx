@@ -7,7 +7,7 @@ function Help() {
   return (
     <section className="w-full  pb-32 ">
       <SearchHelp />
-      <div className="w-[84%] m-auto">
+      <div className="lg:w-[84%] m-auto">
         
         <div className=" pt-10 ">
           <TopicsHelp />

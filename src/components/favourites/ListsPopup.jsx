@@ -46,7 +46,7 @@ function ListsPopup({
       <div className="fixed inset-0 flex items-center justify-center z-50">
         <div className="fixed inset-0 bg-black opacity-10 "></div>
 
-        <div className="bg-white z-50 w-1/3 rounded-lg pb-4">
+        <div className="bg-white z-50 w-80 lg:w-1/3 rounded-lg pb-4">
           <div className=" flex justify-between items-center border-b py-2 px-4">
             <h1 className=" font-semibold ">Move to another list</h1>
             <i

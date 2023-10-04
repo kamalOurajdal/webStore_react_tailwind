@@ -3,12 +3,12 @@ import React from "react";
 function SearchHelp() {
   return (
     <div className=" pt-12 bg-gradient-to-b from-[#FFECEA] to-white">
-      <div className="flex justify-between w-[84%] m-auto">
+      <div className="flex flex-col px-4 lg:flex-row lg:justify-between lg:w-[84%] m-auto">
         <div className="leading-10">
         <h1 className="text-3xl font-bold ">Hi,</h1>
         <h1>What can we help you with?</h1>
       </div>
-      <div className="w-1/2">
+      <div className="mt-3 lg:mt-0 lg:w-1/2">
         <div className="container_input flex items-center  h-11 rounded w-full bg-white bg-opacity-90">
           <input
             type="text"

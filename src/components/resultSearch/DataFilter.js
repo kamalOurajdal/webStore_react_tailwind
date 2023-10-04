@@ -20,21 +20,23 @@ const brandOptions = [
 
 const sortByOptions = [
   {
-    value :"Popularity"
+    value: "Popularity",
   },
   {
-    value :"Price: Low to High"
+    value: "Newest",
   },
   {
-    value :"Price: High to Low"
+    value: "Price: Low to High",
   },
   {
-    value :"Newest"
+    value: "Price: High to Low",
   },
+
   {
-    value :"Product Name"
+    value: "Name",
   },
-]
+
+];
 
 // styles for color select
 const colourStyles = {
@@ -94,8 +96,8 @@ const brandStyles = {
   multiValue: (styles, { data }) => {
     return {
       ...styles,
-      backgroundColor:"#2563EB",
-      borderRadius:"4px" ,
+      backgroundColor: "#2563EB",
+      borderRadius: "4px",
     };
   },
   multiValueLabel: (styles, { data }) => ({
@@ -106,7 +108,7 @@ const brandStyles = {
     height: "27px",
     width: "fit-content",
     textAlign: "center",
-    borderRadius:"4px" ,
+    borderRadius: "4px",
   }),
   multiValueRemove: (styles, { data }) => ({
     ...styles,
@@ -119,4 +121,10 @@ const brandStyles = {
   }),
 };
 
-export { colourOptions, brandOptions, colourStyles, brandStyles, sortByOptions };
+export {
+  colourOptions,
+  brandOptions,
+  colourStyles,
+  brandStyles,
+  sortByOptions,
+};

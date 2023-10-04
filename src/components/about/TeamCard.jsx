@@ -4,7 +4,7 @@ import { teamData } from "./teamData";
 function TeamCard() {
   const data = teamData;
   return (
-    <div className="w-[60%] m-auto">
+    <div className="md:w-[60%] m-auto">
         <div className="grid grid-cols-3 gap-6 ">
           {data.map((item, index) => (
             <div className="bg-white rounded-md shadow-md pb-4 flex flex-col items-center ">

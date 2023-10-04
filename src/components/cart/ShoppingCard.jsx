@@ -9,8 +9,9 @@ function ShoppingCard({ product, decrementQty, addToCart, handelRemoveProduct })
   };
 
   return (
-    <div className="h-44  bg-white shadow-md spacy flex justify-between px-12 rounded-md">
-      <div className="flex  justify-center items-center space-x-4 w-1/2">
+    <div className="lg:h-44  bg-white shadow-md spacy flex flex-col lg:flex-row py-4 justify-between px-4 lg:px-12 rounded-md">
+      <div className="flex  justify-center items-center space-x-4 lg:w-1/2 ">
+        
         <label
           htmlFor={`item${product.id}`}
           className="relative text-sm  text-gray-500 cursor-pointer"
@@ -31,13 +32,14 @@ function ShoppingCard({ product, decrementQty, addToCart, handelRemoveProduct })
             iste facilis suscipit, itaque nobis voluptatum facere libero!
           </h2>
         </div>
+        
       </div>
 
-      <div className="flex flex-col justify-between py-5 w-[26%] ">
+      <div className="flex flex-row-reverse lg:flex-col justify-between  ml-12 lg:ml-0 lg:py-5 mt-4 lg:mt-0  lg:w-[26%]  ">
         <p className="text-right text-lg text-[#e94560] font-bold">
           ${product.price * product.qty}
         </p>
-        <div className="flex justify-between items-center  ">
+        <div className="flex justify-between items-center w-52 lg:w-full ">
           <div className="flex justify-end space-x-6 text-gray-500 ">
             <i className="fa-solid fa-trash-can cursor-pointer" onClick={handleRemove}></i>
             <i className="fa-solid fa-heart cursor-pointer"></i>

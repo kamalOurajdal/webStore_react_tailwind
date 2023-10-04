@@ -38,48 +38,50 @@ function About() {
 
   return (
     <div className="bg-[#f6f9fc] pb-40">
-      <div className="w-[84%]  m-auto  py-10 ">
-        <h1 className="text-3xl font-bold mb-8">
-          This is Kan<span className="text-[#e94560]">9ala</span>{" "}
-        </h1>
-        <p className="leading-8 ">
-          Our vision is to create a better everyday life for the many people.
-          Here you can discover what this means and find out
-          <br /> who we are, what we do and what we’re working towards.
-        </p>
-        <div className="grid grid-cols-3 gap-6 mt-14">
-          {data.map((item, index) => (
-            <AboutCard key={index} data={item} />
-          ))}
-        </div>
-      </div>
-      <div className="w-[90%] m-auto mt-10">
-        <h1 className="text-center font-bold text-4xl mb-4">Our Team</h1>
-        <p className="w-1/2  m-auto">
-          Our team is a diverse group of professionals, each bringing their
-          unique expertise to the table to provide you with exceptional products
-          and an unforgettable shopping experience.
-        </p>
-        <br />
-        <TeamCard />
-      </div>
-      <div
-        className="w-full h-96 mt-16 relative flex items-center justify-center bg-cover bg-center bg-fixed"
-        style={{ backgroundImage: `url(${img_followUS})` }}
-      >
-        <div className="w-72 bg-[#f6f9fc] m-auto h-full flex flex-col items-center justify-center">
-          <h1 className="text-3xl font-bold text-center text-gray-600">
-            Follow Us
+      <div className="w-[84%]  m-auto  py-10">
+        <div className=" ">
+          <h1 className="text-3xl font-bold mb-8">
+            This is Kan<span className="text-[#e94560]">9ala</span>{" "}
           </h1>
-          <div className="flex justify-center items-center space-x-8 text-2xl mt-8">
-            <i className="fa-brands fa-facebook text-[#1877F2] "></i>
-            <i className="fa-brands fa-twitter text-[#1DA1F2] "></i>
-            <i className="fa-brands fa-pinterest text-[#BD081C] "></i>
-            <i className="fa-brands fa-linkedin text-[#0A66C2] "></i>
+          <p className="leading-8 md:w-2/3">
+            Our vision is to create a better everyday life for the many people.
+            Here you can discover what this means and find out
+             who we are, what we do and what we’re working towards.
+          </p>
+          {/* grid grid-cols-3 gap-6 mt-14 */}
+          <div className="text-sm  mt-14 md:grid md:grid-cols-3 md:gap-6  ">
+            {data.map((item, index) => (
+              <AboutCard key={index} data={item} />
+            ))}
           </div>
         </div>
-      </div>
-      <div className="w-[90%] m-auto mt-20">
+        <div className=" mt-10">
+          <h1 className="text-center font-bold text-4xl mb-4">Our Team</h1>
+          <p className="text-sm text-justify mb-6 md:w-1/2 m-auto">
+            Our team is a diverse group of professionals, each bringing their
+            unique expertise to the table to provide you with exceptional
+            products and an unforgettable shopping experience.
+          </p>
+          <TeamCard />
+        </div>
+        <div
+          className="w-full h-60 mt-16 relative flex items-center justify-center bg-cover bg-center bg-fixed"
+          style={{ backgroundImage: `url(${img_followUS})` }}
+        >
+          {/* w-72 bg-[#f6f9fc] m-auto h-full flex flex-col items-center justify-center */}
+          <div className="px-4 bg-[#f6f9fc] m-auto h-full flex flex-col items-center justify-center">
+            <h1 className="text-xl font-bold text-center text-gray-600">
+              Follow Us
+            </h1>
+            {/* flex justify-center items-center space-x-8 text-2xl mt-8 */}
+            <div className="flex justify-center items-center space-x-4 text-2xl mt-8">
+              <i className="fa-brands fa-facebook text-[#1877F2] "></i>
+              <i className="fa-brands fa-twitter text-[#1DA1F2] "></i>
+              <i className="fa-brands fa-pinterest text-[#BD081C] "></i>
+              <i className="fa-brands fa-linkedin text-[#0A66C2] "></i>
+            </div>
+          </div>
+        </div>
         <TrustInfo />
       </div>
     </div>

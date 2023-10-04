@@ -2,7 +2,16 @@ import React, { useState } from "react";
 import FilterSearchResult from "../components/resultSearch/FilterSearchResult";
 import Data from "../components/home/Data";
 import MoreToLoveCard from "../components/home/MoreToLoveCard";
+import { useLocation } from "react-router-dom";
+
 function SearchResult() {
+  const location = useLocation();
+  const searchParams = new URLSearchParams(location.search);
+
+  const under = searchParams.get('under');
+  console.log("under ", under);
+
+
   const { productItems } = Data;
   return (
     <section className="  pt-10 pb-32 bg-[#f6f9fc]">

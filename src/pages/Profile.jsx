@@ -17,17 +17,17 @@ function Profile() {
 
   return (
     <section className=" pb-20 pt-10 ">
-      <div className="w-[84%] m-auto">
+      <div className=" px-4 lg:px-0 lg:w-[84%] m-auto">
         <div className=" mb-6">
           <h1 className="font-semibold text-4xl mb-6">Hi Kamal!</h1>
           <p className="text-sm">
-            Need to change account?
+            Need to change account?{" "}
             <Link to={"/login"} className="font-semibold">
               Log out
             </Link>{" "}
           </p>
         </div>
-        <div className=" rounded-md grid grid-cols-2 gap-14">
+        <div className=" rounded-md grid  lg:grid-cols-2 gap-4 lg:gap-14">
           <div className=" bg-white pb-6 h-fit  flex flex-col  bg-fixed bg-cover bg-center shadow-md">
             {<img src={profile_img} alt="" className=" rounded-t-md" />}
             <div className="p-4">

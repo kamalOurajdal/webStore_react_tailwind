@@ -57,8 +57,8 @@ function Categories() {
     },
   ];
   return (
-    <section className="bg-white w-fit h-[65vh] shadow-md shadow-gray-400 mr-2 flex flex-col justify-between py-5 ">
-      <h1 className="text-sm font-bold text-gray-700 px-4"><i className="fa-solid fa-list mr-2 "></i> Categories</h1>
+    <section className="bg-white w-fit h-[65vh] md:h-[70vh] shadow-md shadow-gray-400 mr-2 flex flex-col justify-between py-5 ">
+      <h1 className="text-sm font-bold text-gray-700 px-4 hidden md:flex"><i className="fa-solid fa-list mr-2 "></i> Categories</h1>
       {categories.map((category, index) => (
         <button
           key={index}

@@ -7,20 +7,20 @@ function Login() {
         e.preventDefault();
     }
   return (
-    <section className="h-[78vh] flex items-start justify-around pb-20 pt-10
+    <section className="m-auto px-4 lg:px-0 h-[78vh] flex flex-col items-center lg:flex-row lg:items-start lg:justify-around pb-20 pt-10
      bg-[#f6f9fc]">
       <div >
         <h1 className="text-3xl font-bold mb-10">
           Log into your Kan<span className="text-[#e94560]">9ala</span> <br />{" "}
           account
         </h1>
-        <p className=" text-gray-500">
-          Get a more personalized experience where you don’t need <br /> to fill
+        <p className=" text-gray-500 mb-8 lg:mb-0">
+          Get a more personalized experience where you don’t need <br className="hidden lg:flex"/> to fill
           in your info every time
         </p>
       </div>
-      <div className="w-[45%]  shadow-md h-96 mr-48 bg-white rounded-xl   flex justify-center items-center">
-        <div className="w-full px-10">
+      <div className="w-full mx-4 lg:mx-0  lg:w-[45%]  shadow-md h-96  bg-white rounded-xl   flex justify-center items-center">
+        <div className="w-full px-5 lg:px-10">
           <h2 className=" text-left font-semibold text-gray-600">
             Join or log in to kan9ala now for a personalized shopping journey.
           </h2>

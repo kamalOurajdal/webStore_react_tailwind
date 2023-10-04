@@ -61,15 +61,15 @@ function TopicsHelp() {
 
   return (
     
-    <section className="w-full  pb-20 pt-10  ">
-      <div className="bg-[#f6f9fc] rounded-lg px-10 py-5">
+    <section className="w-full  pb-20 lg:pt-10  ">
+      <div className="bg-[#f6f9fc] rounded-lg px-4 lg:px-10 py-5">
         <div className="flex justify-between mb-4">
           <h1 className="font-bold text-lg">Topics</h1>
           <p className="text-gray-400">
             More topics <i className="fa-solid fa-caret-right"></i>
           </p>
         </div>
-        <div className="  grid grid-cols-2 gap-4">
+        <div className="  grid lg:grid-cols-2 gap-4">
           {QA.map((item, index) => (
             <AccordionItem
               key={index}

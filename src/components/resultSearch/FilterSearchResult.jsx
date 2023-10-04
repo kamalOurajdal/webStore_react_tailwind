@@ -18,6 +18,9 @@ function FilterSearchResult() {
   const [priceRange, setPriceRange] = useState([Min, Max]);
   const [selectedColor, setSelectedColor] = useState(null);
   const [selectedBrand, setSelectedBrand] = useState(null);
+  const[sortByValue,setSortByValue]=useState("default");
+
+  
 
   const handleChangeColor = (selectedOption) => {
     setSelectedColor(selectedOption);
@@ -27,7 +30,6 @@ function FilterSearchResult() {
   };
 
   const handleChangePrice =(e) =>{
-    /* check witch value is changing */
     const name = e.target.name;
     if(name ==="min"){
       e.target.value > 0 ? setPriceRange([e.target.value, priceRange[1]]) : setPriceRange(["", priceRange])
@@ -37,23 +39,38 @@ function FilterSearchResult() {
     }
   }
 
+  const [open, setOpen] = useState(null);
+  const toggle = (index) => {
+    if (open === index) {
+      return setOpen(null);
+    }
+    setOpen(index);
+  };
+
+  const handleSortChange = (value, index) =>{
+    setSortByValue(value)
+    console.log(value);
+    toggle(index)
+  }
+
   return (
     <nav className=" bg-white rounded-md shadow-md border">
-      <div className="w-72 p-4 ">
+      <div className="w-64 p-4 ">
         <div>
           <h1 className="text-lg font-semibold text-gray-500">
             {" "}
             <i className="fa-solid fa-filter text-sm"></i> Filters
           </h1>
           <hr />
-          {/* sort by */}
           <div className="mt-4">
             <h1 className="font-bold">Sort by:</h1>
-            <div className="flex flex-col">
+            <div className="flex flex-wrap">
               {sortByOptions.map((option, index) => (
                 <div
                   key={index}
-                  className="flex items-center cursor-pointer mt-2 border px-4 h-9 rounded hover:bg-blue-100"
+                  className={`${open === index ? "bg-blue-500 text-white" : "bg-white"} text-xs flex-grow space-x-2 w-fit flex items-center cursor-pointer mt-2 border px-4 h-9 rounded`}
+                  onClick={() => handleSortChange(option.value, index)}
+
                 >
                   {option.value}
                 </div>
@@ -91,8 +108,9 @@ function FilterSearchResult() {
             className=" w-full mt-6 "
             thumbClassName="cursor-pointer w-4 h-4 border border-[#e94560] border-2 bg-[#e94560] rounded-full -top-[6px] outline-none"
             trackClassName="track"
-            defaultValue={[20, 80]}
             value={priceRange}
+            defaultValue={[20, 80]}
+            
             renderTrack={(props, state) => (
               <div {...props} className={props.className} />
             )}

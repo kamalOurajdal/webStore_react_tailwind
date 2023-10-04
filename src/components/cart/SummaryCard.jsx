@@ -2,7 +2,7 @@ import React from "react";
 
 function SummaryCard({totalPrice}) {
   return (
-    <div className="bg-white shadow-md h-fit flex-grow p-5 flex flex-col items-center rounded-md">
+    <div className="bg-white shadow-md h-fit flex-grow p-5 mb-4 lg:mb-0 flex flex-col items-center rounded-md">
       <div className="leading-9 w-full">
         <h1 className="font-bold text-xl text-[#e94560] mb-4">Summary</h1>
         <div className="flex justify-between">

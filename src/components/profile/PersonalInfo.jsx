@@ -37,7 +37,7 @@ function PersonalInfo() {
   return (
     <div className="p-4">
       <div className="flex justify-between items-start">
-        <div className="w-1/3">
+        <div className="lg:w-1/3">
           <h1 className="font-semibold mb-4">Personal information</h1>
           <ul className="space-y-3">
             <li>

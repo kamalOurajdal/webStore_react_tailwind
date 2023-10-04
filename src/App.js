@@ -132,7 +132,7 @@ function App() {
         </Route>
         <Route path="product_details" element={<ProductDetails />} />
         <Route path="products" >
-          <Route path="new" element={<NewProducts/>} />
+          <Route path="new" element={<NewProducts addToCart={addToCart} addToFavourite={addToFavourite}/>} />
         </Route>
       </Routes>
       <Footer />

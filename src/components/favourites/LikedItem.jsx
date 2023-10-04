@@ -22,8 +22,8 @@ function LikedItem({
 
 
   return (
-    <div className="h-44  bg-white shadow-md spacy flex justify-between px-12 rounded-md">
-      <div className="flex  justify-center items-center space-x-4 w-1/2">
+    <div className="h-44  bg-white shadow-md spacy flex flex-col lg:flex-row  justify-between px-4 py-2 lg:px-12 rounded-md">
+      <div className="flex   justify-center items-center space-x-4 lg:w-1/2">
         <label
           htmlFor={`item${product.id}`}
           className="relative text-sm  text-gray-500 cursor-pointer"
@@ -46,7 +46,7 @@ function LikedItem({
         </div>
       </div>
 
-      <div className="flex flex-col justify-around py-5 ">
+      <div className="flex lg:flex-col lg:justify-between   py-5 ">
         <button
           className="flex items-center justify-center space-x-2 border p-2 rounded-md text-[#e94560] hover:bg-[#e94560] hover:text-white duration-500 ease-in-out"
           onClick={() => {
@@ -54,15 +54,15 @@ function LikedItem({
           }}
         >
           <i className="fa-solid fa-cart-plus "></i>
-          <h2 className="text-sm ">Move to cart</h2>
+          <h2 className="text-sm">Move to cart</h2>
         </button>
-        <button
+        <b2tton
           className="flex items-center justify-center space-x-2 border p-2 rounded-md text-[#e94560] hover:bg-[#e94560] hover:text-white duration-500 ease-in-out"
           onClick={() => {openListNamesPopup()}}
         >
           <i className="fa-solid fa-list "></i>
           <h2 className="text-sm ">Move to list</h2>
-        </button>
+        </b2tton>
         {isListNamesPopupOpen && (
           <ListsPopup
             product={product}

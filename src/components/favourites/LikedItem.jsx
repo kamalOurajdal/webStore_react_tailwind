@@ -46,7 +46,7 @@ function LikedItem({
         </div>
       </div>
 
-      <div className="flex lg:flex-col lg:justify-between   py-5 ">
+      <div className="flex justify-between lg:flex-col lg:justify-between w-full lg:w-fit  py-5 ">
         <button
           className="flex items-center justify-center space-x-2 border p-2 rounded-md text-[#e94560] hover:bg-[#e94560] hover:text-white duration-500 ease-in-out"
           onClick={() => {

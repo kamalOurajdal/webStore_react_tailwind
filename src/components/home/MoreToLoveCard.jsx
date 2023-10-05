@@ -1,37 +1,41 @@
 import React from "react";
+import TopicsHelp from "./../help/TopicsHelp";
+import { Link } from "react-router-dom";
 function MoreToLoveCard({ product, addToCart, addToFavourite }) {
   return (
     <>
-      <div className="group bg-[#fff] relative shadow-md rounded-md mt-4 lg:mt-0 lg:m-2 flex-grow flex flex-col justify-between  h-80  ">
-        <div className="h-48 my-8 flex flex-col justify-center items-center">
-          <img src={product.cover} alt="" className="w-32" />
-        </div>
+      <div className="group px-2 lg:px-4 bg-[#fff] relative shadow-md rounded-md mt-4 lg:mt-0 lg:m-2 flex-grow flex flex-col justify-around  h-64  ">
+        <Link to={"/search"}>
+          <div className="cursor-pointer ">
+            <div className="my-4 flex flex-col justify-center items-center ">
+              <img src={product.cover} alt="" className="w-28" />
+            </div>
 
-        <div className="lg:text-lg  flex flex-col justify-end pb-4 px-4">
-          <h3 className="font-bold">{product.name}</h3>
-          <div className=" text-[#ffcd4e] text-xs lg:text-base py-2 ">
-            <i className="fa fa-star"></i>
-            <i className="fa fa-star"></i>
-            <i className="fa fa-star"></i>
-            <i className="fa fa-star"></i>
-            <i className="fa fa-star"></i>
+            <div className="lg:text-lg  flex flex-col justify-end  ">
+              <h3 className="font-bold">{product.name}</h3>
+              <div className=" text-[#ffcd4e] text-xs lg:text-base py-2 ">
+                <i className="fa fa-star"></i>
+                <i className="fa fa-star"></i>
+                <i className="fa fa-star"></i>
+                <i className="fa fa-star"></i>
+                <i className="fa fa-star"></i>
+              </div>
+            </div>
           </div>
-          <div className="font-bold flex justify-between items-center text-xl text-[#e94560]">
-            <i
-              className="fa-regular fa-heart text-xl my-2 mx-1 hover:text-[#e94560] cursor-pointer"
-              onClick={() => addToFavourite(product)}
-            ></i>
-            <h4>${product.price}.00 </h4>
-            {/* step : 3  
-                     if hami le button ma click garryo bahne 
-                    */}
-            <button
-              className="  text-[#e94560] text-xl   rounded-md px-2"
-              onClick={() => addToCart(product)}
-            >
-              <i className="fa-solid fa-cart-plus"></i>
-            </button>
-          </div>
+        </Link>
+
+        <div className="lg:mb-2 font-bold flex justify-between items-center text-xl text-gray-500">
+          <i
+            className="fa-regular fa-heart text-xl my-2 mx-1 hover:text-[#e94560] cursor-pointe"
+            onClick={() => addToFavourite(product)}
+          ></i>
+          <h4 className="text-[#e94560]">${product.price}.00 </h4>
+          <button
+            className="  hover:text-[#e94560] text-xl   rounded-md px-2"
+            onClick={() => addToCart(product)}
+          >
+            <i className="fa-solid fa-cart-plus"></i>
+          </button>
         </div>
       </div>
     </>

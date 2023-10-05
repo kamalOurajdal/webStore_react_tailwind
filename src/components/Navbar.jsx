@@ -112,121 +112,128 @@ function Navbar() {
   };
   const NavbarMobile = () => {
     return (
-        <nav
-          className={`${
-            isMenuOpen ? "flex w-60 p-4" : "w-0"
-          } absolute top-9 right-3 shadow-md overflow-hidden z-50  h-[400px] text-sm flex flex-col rounded-md bg-white duration-500 ease-in-out`}
-        >
-          <div className="  flex  flex-col  space-y-4  text-black">
-            <Link
-              to="/"
-              className=" hover:text-rose-500"
-              onClick={toggleIsMenuOpen}
+      <nav
+        className={`${
+          isMenuOpen ? " right-0 p-4" : "-right-[414px]"
+        } fixed top-0  shadow-md  z-50  h-screen w-screen text-sm  flex flex-col justify-center items-center rounded-md bg-white `}
+      >
+        <div className="text-2xl font-bold flex justify-between w-full items-center absolute top-4 px-4 left-0">
+          <h1>
+            Kan<span className="text-[#e94560]">9ala</span>{" "}
+          </h1>
+          <h1 className="text-red-500" onClick={toggleIsMenuOpen}>
+            x
+          </h1>
+        </div>
+        <div className="  flex  flex-col  space-y-8 text-lg   text-black">
+          <Link
+            to="/"
+            className=" hover:text-rose-500"
+            onClick={toggleIsMenuOpen}
+          >
+            Home
+          </Link>
+          <div className="relative group">
+            <p
+              className={`${
+                open === 1 ? "text-rose-500" : " "
+              }  cursor-pointer`}
+              onClick={() => toggle(1)}
             >
-              Home
-            </Link>
-            <div className="relative group">
-              <p
+              Products{" "}
+              <i
                 className={`${
-                  open === 1 ? "text-rose-500" : " "
-                }  cursor-pointer`}
-                onClick={() => toggle(1)}
-              >
-                Products{" "}
-                <i
-                  className={`${
-                    open === 1 ? "rotate-180 " : " rotate-0"
-                  } fa-solid fa-caret-up ml-1  duration-300 ease-in-out`}
-                ></i>
-              </p>
-              <Collapse isOpened={open === 1}>
-                <div className=" space-y-4 py-2 ">
-                  <Link
-                    to="/products/new"
-                    className="flex items-center  px-4  hover:text-rose-500"
-                    onClick={toggleIsMenuOpen}
-                  >
-                    New products{" "}
-                    <i className="fa-solid fa-caret-right ml-2"></i>
-                  </Link>
-                  <Link
-                    to="/products/top-sellers"
-                    className="flex items-center  px-4  hover:text-rose-500"
-                    onClick={toggleIsMenuOpen}
-                  >
-                    Our top sellers{" "}
-                    <i className="fa-solid fa-caret-right ml-2"></i>
-                  </Link>
-                </div>
-              </Collapse>
-            </div>
-            <div className="relative ">
-              <p
-                className={`${
-                  open === 2 ? "text-rose-500" : " "
-                }  cursor-pointer`}
-                onClick={() => toggle(2)}
-              >
-                Deals{" "}
-                <i
-                  className={`${
-                    open === 2 ? "rotate-180 " : " rotate-0"
-                  } fa-solid fa-caret-up ml-1 transform duration-500 ease-in-out`}
-                ></i>
-              </p>
-              <Collapse isOpened={open === 2}>
-                <div className="w-full space-y-4 py-2  ">
-                  <Link
-                    to="search?under=5"
-                    className="flex items-center  px-4  hover:text-rose-500"
-                    onClick={toggleIsMenuOpen}
-                  >
-                    Solutions under 5${" "}
-                    <i className="fa-solid fa-caret-right ml-2"></i>
-                  </Link>
-                  <Link
-                    to="search?under=7.5"
-                    className="flex items-center  px-4  hover:text-rose-500"
-                    onClick={toggleIsMenuOpen}
-                  >
-                    Solutions under 7.5${" "}
-                    <i className="fa-solid fa-caret-right ml-2"></i>
-                  </Link>
-                  <Link
-                    to="search?under=10"
-                    className="flex items-center  px-4  hover:text-rose-500"
-                    onClick={toggleIsMenuOpen}
-                  >
-                    Solutions under 10${" "}
-                    <i className="fa-solid fa-caret-right ml-2"></i>
-                  </Link>
-                </div>
-              </Collapse>
-            </div>
-            <Link
-              to="/about"
-              className=" hover:text-rose-500"
-              onClick={toggleIsMenuOpen}
-            >
-              About
-            </Link>
-            <Link
-              to="/contact"
-              className=" hover:text-rose-500"
-              onClick={toggleIsMenuOpen}
-            >
-              Contact
-            </Link>
-            <Link
-              to="/help"
-              className=" hover:text-rose-500"
-              onClick={toggleIsMenuOpen}
-            >
-              Help Center
-            </Link>
-            <Outlet />
+                  open === 1 ? "rotate-180 " : " rotate-0"
+                } fa-solid fa-caret-up ml-1  duration-300 ease-in-out`}
+              ></i>
+            </p>
+            <Collapse isOpened={open === 1}>
+              <div className=" space-y-4 py-2 ">
+                <Link
+                  to="/products/new"
+                  className="flex items-center  px-4  hover:text-rose-500"
+                  onClick={toggleIsMenuOpen}
+                >
+                  New products <i className="fa-solid fa-caret-right ml-2"></i>
+                </Link>
+                <Link
+                  to="/products/top-sellers"
+                  className="flex items-center  px-4  hover:text-rose-500"
+                  onClick={toggleIsMenuOpen}
+                >
+                  Our top sellers{" "}
+                  <i className="fa-solid fa-caret-right ml-2"></i>
+                </Link>
+              </div>
+            </Collapse>
           </div>
-        </nav>
+          <div className="relative ">
+            <p
+              className={`${
+                open === 2 ? "text-rose-500" : " "
+              }  cursor-pointer`}
+              onClick={() => toggle(2)}
+            >
+              Deals{" "}
+              <i
+                className={`${
+                  open === 2 ? "rotate-180 " : " rotate-0"
+                } fa-solid fa-caret-up ml-1 transform duration-500 ease-in-out`}
+              ></i>
+            </p>
+            <Collapse isOpened={open === 2}>
+              <div className="w-full space-y-4 py-2  ">
+                <Link
+                  to="search?under=5"
+                  className="flex items-center  px-4  hover:text-rose-500"
+                  onClick={toggleIsMenuOpen}
+                >
+                  Solutions under 5${" "}
+                  <i className="fa-solid fa-caret-right ml-2"></i>
+                </Link>
+                <Link
+                  to="search?under=7.5"
+                  className="flex items-center  px-4  hover:text-rose-500"
+                  onClick={toggleIsMenuOpen}
+                >
+                  Solutions under 7.5${" "}
+                  <i className="fa-solid fa-caret-right ml-2"></i>
+                </Link>
+                <Link
+                  to="search?under=10"
+                  className="flex items-center  px-4  hover:text-rose-500"
+                  onClick={toggleIsMenuOpen}
+                >
+                  Solutions under 10${" "}
+                  <i className="fa-solid fa-caret-right ml-2"></i>
+                </Link>
+              </div>
+            </Collapse>
+          </div>
+          <Link
+            to="/about"
+            className=" hover:text-rose-500"
+            onClick={toggleIsMenuOpen}
+          >
+            About
+          </Link>
+          <Link
+            to="/contact"
+            className=" hover:text-rose-500"
+            onClick={toggleIsMenuOpen}
+          >
+            Contact
+          </Link>
+          <Link
+            to="/help"
+            className=" hover:text-rose-500"
+            onClick={toggleIsMenuOpen}
+          >
+            Help Center
+          </Link>
+          <Outlet />
+        </div>
+      </nav>
     );
   };
 
@@ -246,17 +253,15 @@ function Navbar() {
             <i className="fa-solid fa-caret-right ml-2"></i>
           </div>
           <div className="absolute top-14 z-50">
-            {isCategoriesOpen && <Categories />}
+            {isCategoriesOpen && <Categories toggleCategorie = {toggleCategorie}/>}
           </div>
 
           <i
-            class={`${
-              isMenuOpen ? "fa-xmark" : "fa-bars"
-            } fa-solid   cursor-pointer text-xl text-gray-500 md:hidden`}
+            class={`${"fa-bars"} fa-solid  cursor-pointer text-xl text-gray-500 md:hidden`}
             onClick={toggleIsMenuOpen}
           ></i>
 
-          <NavbarMobile />
+          {<NavbarMobile />}
         </div>
       </div>
     </nav>

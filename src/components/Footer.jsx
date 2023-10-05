@@ -17,7 +17,7 @@ function Footer() {
           <h1 className="font-bold mb-2 lg:mb-0 text-lg lg:text-2xl text-[#0f3060] text-center lg:text-left">
             Subscribe to our news
           </h1>
-          <div className="flex justify-between items-center lg:w-2/3 border border-gray-100 rounded-md">
+          <div className="flex justify-between items-center lg:w-2/3 border  border-gray-300 rounded-full pr-1">
             <input
               type="email"
               placeholder="Enter your email"

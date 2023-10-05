@@ -10,7 +10,7 @@ import {
   sortByOptions,
 } from "./DataFilter";
 
-function FilterSearchResult() {
+function FilterSearchResult({ toggleSearchFilter }) {
   const animatedComponents = makeAnimated();
   const Min = 0;
   const Max = 200;
@@ -18,9 +18,7 @@ function FilterSearchResult() {
   const [priceRange, setPriceRange] = useState([Min, Max]);
   const [selectedColor, setSelectedColor] = useState(null);
   const [selectedBrand, setSelectedBrand] = useState(null);
-  const[sortByValue,setSortByValue]=useState("default");
-
-  
+  const [sortByValue, setSortByValue] = useState("default");
 
   const handleChangeColor = (selectedOption) => {
     setSelectedColor(selectedOption);
@@ -29,15 +27,18 @@ function FilterSearchResult() {
     setSelectedBrand(selectedBrand);
   };
 
-  const handleChangePrice =(e) =>{
+  const handleChangePrice = (e) => {
     const name = e.target.name;
-    if(name ==="min"){
-      e.target.value > 0 ? setPriceRange([e.target.value, priceRange[1]]) : setPriceRange(["", priceRange])
+    if (name === "min") {
+      e.target.value > 0
+        ? setPriceRange([e.target.value, priceRange[1]])
+        : setPriceRange(["", priceRange]);
+    } else {
+      e.target.value > 0
+        ? setPriceRange([priceRange[0], e.target.value])
+        : setPriceRange([priceRange[0], ""]);
     }
-    else{
-      e.target.value > 0 ? setPriceRange([priceRange[0], e.target.value]) : setPriceRange([priceRange[0], ""])
-    }
-  }
+  };
 
   const [open, setOpen] = useState(null);
   const toggle = (index) => {
@@ -47,20 +48,23 @@ function FilterSearchResult() {
     setOpen(index);
   };
 
-  const handleSortChange = (value, index) =>{
-    setSortByValue(value)
+  const handleSortChange = (value, index) => {
+    setSortByValue(value);
     console.log(value);
-    toggle(index)
-  }
+    toggle(index);
+  };
 
   return (
-    <nav className=" bg-white rounded-md shadow-md border">
-      <div className="w-64 p-4 ">
-        <div>
-          <h1 className="text-lg font-semibold text-gray-500">
-            {" "}
-            <i className="fa-solid fa-filter text-sm"></i> Filters
-          </h1>
+    <nav className="mx-6 lg:mx-0  lg:flex bg-white rounded-md shadow-md border">
+      <div className="lg:w-64 p-4 ">
+        <div className="relative">
+            <h1 className="text-lg font-semibold text-gray-500">
+              {" "}
+              <i className="fa-solid fa-filter text-sm"></i> Filters
+            </h1>
+            <h1 className=" lg:hidden font-bold text-2xl absolute -top-3 -right-1 text-red-500 "
+            onClick={toggleSearchFilter}>x</h1>
+
           <hr />
           <div className="mt-4">
             <h1 className="font-bold">Sort by:</h1>
@@ -68,9 +72,10 @@ function FilterSearchResult() {
               {sortByOptions.map((option, index) => (
                 <div
                   key={index}
-                  className={`${open === index ? "bg-blue-500 text-white" : "bg-white"} text-xs flex-grow space-x-2 w-fit flex items-center cursor-pointer mt-2 border px-4 h-9 rounded`}
+                  className={`${
+                    open === index ? "bg-blue-500 text-white" : "bg-white"
+                  } text-xs flex-grow space-x-2 w-fit flex items-center cursor-pointer mt-2 border px-4 h-9 rounded`}
                   onClick={() => handleSortChange(option.value, index)}
-
                 >
                   {option.value}
                 </div>
@@ -110,7 +115,6 @@ function FilterSearchResult() {
             trackClassName="track"
             value={priceRange}
             defaultValue={[20, 80]}
-            
             renderTrack={(props, state) => (
               <div {...props} className={props.className} />
             )}

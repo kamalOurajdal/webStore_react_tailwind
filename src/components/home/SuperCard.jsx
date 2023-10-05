@@ -68,8 +68,8 @@ const SuperCard = ({ productItems, addToCart, addToFavourite }) => {
       <Slider {...settings} className="">
         {productItems.map((item, index) => {
           return (
-            <div className=" group" key={index}>
-              <div className=" bg-white h-64 lg:h-80 relative shadow-md rounded-md m-1 lg:m-4  flex flex-col justify-around ">
+            <div className=" group " key={index}>
+              <div className="px-2 lg:px-4 bg-white h-64 lg:h-72 relative shadow-md rounded-md m-1 lg:m-3  flex flex-col justify-around ">
                 <Link to={"/product_details"}>
                   <div className="flex flex-col ">
                     <div className=" h-full  flex flex-col justify-center items-center">
@@ -79,11 +79,11 @@ const SuperCard = ({ productItems, addToCart, addToFavourite }) => {
                       <img
                         src={item.cover}
                         alt=""
-                        className="w-28 mt-6 lg:w-40 lg:mt-8"
+                        className="w-28 mt-6 lg:w-32 lg:mt-8"
                       />
                     </div>
 
-                    <div className="text-lg  flex flex-col justify-end py-2 px-2 lg:px-4">
+                    <div className="text-lg  flex flex-col justify-end py-2 ">
                       <h3 className="font-bold text-sm lg:text-base">
                         {item.name}
                       </h3>

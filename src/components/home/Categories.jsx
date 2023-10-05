@@ -1,8 +1,6 @@
-import { faMobileAlt, faPrint } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React from "react";
 
-function Categories() {
+function Categories({toggleCategorie}) {
   // categories variable
   const categories = [
     {
@@ -62,6 +60,7 @@ function Categories() {
       {categories.map((category, index) => (
         <button
           key={index}
+          onClick={toggleCategorie}
           className="text-left text-sm pl-4 w-full my- py-2 hover:bg-rose-100 transform duration-300 ease-in px-1"
         >
           <i className={`${category.icon} mr-2 text-gray-400` } ></i> {category.name}

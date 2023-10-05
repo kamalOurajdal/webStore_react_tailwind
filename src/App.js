@@ -16,8 +16,21 @@ import { useState } from "react";
 import ProductDetails from "./pages/ProductDetails";
 import NewProducts from "./components/product/NewProducts";
 import SearchResult from "./pages/SearchResult";
-
+import { useQuery, gql } from "@apollo/client";
 function App() {
+  const GET_Lists = gql`{
+      allProducts {
+        id
+        name
+      }
+    }
+  `;
+
+  const { loading, error, data } = useQuery(GET_Lists);
+  if (loading) console.log("loading ......");
+  if (error) console.log("error ......");
+  if (data) console.log("data ......", data.allProducts[0]);
+
   const { productItems } = Data;
   const [cartItem, setCartItem] = useState([]);
 
@@ -60,9 +73,8 @@ function App() {
 
   const [favouriteItem, setFavouriteItem] = useState([]);
   const [selectedListName, setSelectedListName] = useState("All");
-  
 
-  const changeListTo = (product, listName) =>{
+  const changeListTo = (product, listName) => {
     const productExist = favouriteItem.find((item) => item.id === product.id);
     if (productExist) {
       setFavouriteItem(
@@ -73,13 +85,13 @@ function App() {
         )
       );
     }
-  }
-  const favouriteItemsWithList = (listName) =>{
-    if(listName === "All"){
-      return favouriteItem
+  };
+  const favouriteItemsWithList = (listName) => {
+    if (listName === "All") {
+      return favouriteItem;
     }
     return favouriteItem.filter((item) => item.listName === listName);
-  }
+  };
 
   return (
     <div className=" w-screen font-[poppins] ">
@@ -131,8 +143,16 @@ function App() {
           />
         </Route>
         <Route path="product_details" element={<ProductDetails />} />
-        <Route path="products" >
-          <Route path="new" element={<NewProducts addToCart={addToCart} addToFavourite={addToFavourite}/>} />
+        <Route path="products">
+          <Route
+            path="new"
+            element={
+              <NewProducts
+                addToCart={addToCart}
+                addToFavourite={addToFavourite}
+              />
+            }
+          />
         </Route>
       </Routes>
       <Footer />

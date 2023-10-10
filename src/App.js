@@ -12,24 +12,59 @@ import Contact from "./pages/Contact";
 import Login from "./pages/Login";
 import Favourites from "./pages/Favourites";
 import Data from "./components/home/Data";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import ProductDetails from "./pages/ProductDetails";
 import NewProducts from "./components/product/NewProducts";
 import SearchResult from "./pages/SearchResult";
 import { useQuery, gql } from "@apollo/client";
+import Test from "./pages/Test";
+
 function App() {
-  const GET_Lists = gql`{
+  const GET_Lists = gql`
+    {
       allProducts {
         id
+        rating
+        price
         name
+        cover
+        countInStock
+        createdAt
+        description
+        
+        images {
+          image
+        }
+        colors {
+          color
+        }
+        categories {
+          category
+        }
+        brands {
+          brand
+        }
+        sizes {
+          size
+        }
       }
     }
   `;
 
+  const [products, setProducts] = useState([]);
   const { loading, error, data } = useQuery(GET_Lists);
-  if (loading) console.log("loading ......");
-  if (error) console.log("error ......");
-  if (data) console.log("data ......", data.allProducts[0]);
+
+  useEffect(() => {
+    if (data) {
+      setProducts(data.allProducts);
+      console.log("data", products);
+    }
+    
+    if (loading) console.log("loading ......");
+    if (error) console.log("error ......");
+  }, [data]);
+
+
 
   const { productItems } = Data;
   const [cartItem, setCartItem] = useState([]);
@@ -98,11 +133,12 @@ function App() {
       <Header nbrItem={cartItem.length} />
       <Routes>
         <Route path="/" exact>
+          <Route path="test" element={<Test products = {products}/>} />
           <Route
             index
             element={
               <Home
-                productItems={productItems}
+                productItems={products}
                 addToCart={addToCart}
                 addToFavourite={addToFavourite}
               />

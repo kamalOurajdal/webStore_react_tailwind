@@ -36,7 +36,7 @@ function LikedItem({
           />
           <i className="fa-solid fa-check absolute left-1 top-1 font-bold opacity-0 text-white peer-checked:opacity-100  "></i>
         </label>
-        <img src={product.cover} alt={product.name} className="h-24 " />
+        <img src={"http://localhost:8000/" + product.cover} alt={product.name} className="h-24 " />
 
         <div className="">
           <h2 className="mb-1 font-semibold">{product.name}</h2>
